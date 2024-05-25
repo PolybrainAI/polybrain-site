@@ -1,13 +1,20 @@
 #home-page {
     margin: 0;
+    margin-top: 78px;
 
-    height: 1200px;
+    height: 1000px;
+    width: 100%;
+    overflow: scroll;
+}
+
+#home-page button {
+    position: relative;
 }
 
 #home-page #landing {
+    position: relative;
     background-color: #4548A3;
-    margin-top: 78px;
-    height: 100vh;
+    height: calc(100vh + 30px);
     width: 100%;
 }
 
@@ -18,7 +25,7 @@
     font-weight: 400;
     font-size: 96px;
     width: 720px;
-    padding-top: 129px;
+    padding-top: 57px;
     margin-left: 5%;
     z-index: 10;
 }
@@ -28,7 +35,6 @@
     max-width: 705px;
     height: 100vh;
     right: 0px;
-    top: 78px;
     z-index: 0;
     object-fit: cover;
 }
@@ -41,4 +47,86 @@
 #home-page #landing #signup {
     padding: 10px 80px 10px 80px;
     margin-left: 92px;
+}
+
+#home-page #setup-steps {
+    position: relative;
+    top: -30px;
+    background-color: #363D43;
+    width: 100%;
+    height:1200px;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+#home-page #setup-steps h2{
+    color: white;
+    position: relative;
+    font-size: 48px;
+    font-weight: 400;
+    left: 180px;
+    top: 40px;
+}
+
+#home-page #setup-steps #enumeration{
+    background-color: #363D43;
+    position: absolute;
+    top: 49px;
+    left: 101px;
+    z-index: 0;
+}
+
+#home-page #setup-steps .art {
+    position: absolute;
+    max-width: 60%;
+    right: -120px;
+    top: 40px;
+    opacity: 30%;
+}
+
+#home-page #setup-steps .l1 {
+    color: white;
+    position: relative;
+    top: 83px;
+    left: 200px;
+    font-size: 20px;
+    overflow: visible;
+}
+#home-page #setup-steps .l1 * {
+    margin-right: 30px;
+    position: relative;
+}
+
+#home-page #setup-steps .l1 #login {
+    position: relative;
+    right: 12px;
+    text-decoration: underline;
+    padding: 10px 20px 10px 20px;
+    transition: 0.3s;
+    border-radius: 7px;
+}
+#home-page #setup-steps .l1 #login:hover {
+    background-color: #FFFFFF30;
+    cursor: pointer;
+}
+
+#home-page #setup-steps a {
+    color: inherit;
+}
+
+#home-page #setup-steps .l2 {
+    color: #FFFFFFB2;
+    font-size: 20px;
+    left: 200px;
+    position: relative;
+    left: 200px;
+    top: 180px;
+}
+#home-page #setup-steps .l3 {
+    color: #FFFFFFB2;
+    font-size: 20px;
+    left: 200px;
+    position: relative;
+    left: 200px;
+    top: 290px;
 }
