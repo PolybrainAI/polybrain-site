@@ -1,3 +1,44 @@
-.home-page {
-    margin: 0
+#home-page {
+    margin: 0;
+
+    height: 1200px;
+}
+
+#home-page #landing {
+    background-color: #4548A3;
+    margin-top: 78px;
+    height: 100vh;
+    width: 100%;
+}
+
+#home-page #landing h1 {
+    position: relative;
+    font-family: "Roboto Flex";
+    color: white;
+    font-weight: 400;
+    font-size: 96px;
+    width: 720px;
+    padding-top: 129px;
+    margin-left: 5%;
+    z-index: 10;
+}
+
+#home-page #landing img {
+    position: absolute;
+    max-width: 705px;
+    height: 100vh;
+    right: 0px;
+    top: 78px;
+    z-index: 0;
+    object-fit: cover;
+}
+
+#home-page #landing #login {
+    padding: 10px 40px 10px 40px;
+    margin-left: 40px;
+}
+
+#home-page #landing #signup {
+    padding: 10px 80px 10px 80px;
+    margin-left: 92px;
 }
