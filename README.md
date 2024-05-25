@@ -1,46 +1,45 @@
-# Getting Started with Create React App
+# Polybrain Site
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Polybrain is an AI Powered CAD tool designed to work seamlessly with OnShape, enabling users to create 3D models. This repository specifically contains the React code for the Polybrain account configuration website. The website can be accessed at [polybrain.xyz](https://polybrain.xyz).
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Users can add their OnShape Developer tokens (Access token and Secret token) and their OpenAI token to their Polybrain account.
+- These tokens are used by the Polybrain server to communicate with OnShape and OpenAI.
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and is written in TypeScript. To install and run the project locally, follow these steps:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. Clone this repository.
+2. Navigate to the project directory.
+3. Run `npm install` to install the dependencies.
+4. Run `npm start` to start the development server.
 
-### `npm test`
+## File Structure
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **public/**: Contains assets for the website.
+- **src/**
+  - **assets/**: Stores assets for specific pages.
+  - **components/**: Defines React components and their supporting CSS.
+  - **pages/**: Contains individual pages, each nested in its own subdirectory. For example, the home page can be found at `src/pages/home/home.jsx`.
 
-### `npm run build`
+## Contribution
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Contributions to this project are welcome. While there is no `CONTRIBUTING.md` file currently, please note that one might be added in the future. For now, feel free to submit pull requests and raise issues.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Known Issues
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+There are currently no known issues with this app.
 
-### `npm run eject`
+## Documentation
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+For developers interested in integrating or extending Polybrain beyond the website, you can refer to the [contributing section](https://polybrain.xyz/contributing) on the Polybrain website. Please note that this documentation is more tailored towards the core Polybrain product, not the React site.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## License
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+This project is licensed under the terms of the MIT license.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+---
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Feel free to let me know if you'd like any further adjustments or additions!
