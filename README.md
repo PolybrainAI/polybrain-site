@@ -1,5 +1,7 @@
 # Polybrain Site
 
+![alt text](screenshot.png)
+
 Polybrain is an AI Powered CAD tool designed to work seamlessly with OnShape, enabling users to create 3D models. This repository specifically contains the React code for the Polybrain account configuration website. The website can be accessed at [polybrain.xyz](https://polybrain.xyz).
 
 ## Features
