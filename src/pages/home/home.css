@@ -23,15 +23,15 @@ button {
     font-family: "Roboto Flex";
     color: white;
     font-weight: 400;
-    font-size: 96px;
-    width: 720px;
-    padding-top: 57px;
-    margin-left: 5%;
+    font-size: 6vw;
+    width: 50%;
+    padding-top: 5%;
+    margin-left: 6%;
     z-index: 10;
 }
 
 #landing img {
-    position: absolute;
+    position: fixed;
     /* max-width: 705px; */
     width: 50%;
     right: 0px;

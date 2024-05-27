@@ -1,4 +1,5 @@
-import React from 'react';
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import React, { useState, useEffect, useRef }  from 'react';
 import './home.css';
 
 import Header from '../../components/header/header'
@@ -12,12 +13,38 @@ import kofiLogo from "../../assets/kofi-logo.svg"
 import paypalLogo from "../../assets/paypal-logo.svg"
 
 export default function Home() {
+
+  const [offset, setOffset] = useState(0);
+  const FLIP_DISTANCE = 400; // point on page to flip body color
+
+  var last_offset = 0;
+
+  useEffect(() => {
+      function onScroll() {
+
+        // flip body color depending on location
+        if ((window.scrollY - FLIP_DISTANCE) * (last_offset - FLIP_DISTANCE) < 1){
+          document.body.style.backgroundColor = (window.scrollY < FLIP_DISTANCE) ? "#4548A3" : "#3D646A"
+        }
+
+        last_offset = window.scrollY;
+        setOffset(last_offset);
+
+      }
+      // clean up code
+      window.removeEventListener('scroll', onScroll);
+      window.addEventListener('scroll', onScroll, { passive: true });
+      return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  const triggerRef = useRef(null);
+
   return (
     <div id="home-page">
       <Header></Header>
 
       <div id="landing">
-        <img alt="landing art" src={landingArt} />
+        <img id="landing-art" alt="landing art" src={landingArt} style={{top: (offset < window.innerHeight) ? -offset/4 : -1e4}}/>
         <h1>Building Parametric CAD with AI</h1>
 
         <button className='btn-fill btn-glow' id="signup">Get Started</button>
@@ -26,8 +53,8 @@ export default function Home() {
       </div>
 
       <div id='setup-steps'>
-        <img src={landingNumbers} id="enumeration" />
-        <img src={landingStepsArt} className="art" />
+        <img src={landingNumbers} id="enumeration" alt="" />
+        <img src={landingStepsArt} className="art" alt=""/>
         <h2>Let's get you setup</h2>
 
         <div className='l1'>
@@ -36,7 +63,7 @@ export default function Home() {
           <a id="login">Log In</a>
         </div>
 
-        <p className='l2'>Connect your <a href="https://onshape.com" target="_blank">OnShape</a> and <a href="https://platform.openai.com" target="_blank">OpenAI</a> accounts</p>
+        <p className='l2'>Connect your <a href="https://onshape.com" target="_blank" rel="noreferrer">OnShape</a> and <a href="https://platform.openai.com" target="_blank" rel="noreferrer">OpenAI</a> accounts</p>
         <p className='l3'>Install the <a target="_blank">Chrome Plugin</a></p>
 
         <div className='card-container'>
@@ -44,7 +71,7 @@ export default function Home() {
           <div className='card left'>
             <h3>Interesting in Contributing?</h3>
             <a>All of the Polybrain source code is open source and available on GitHub</a>
-            <img className='art' src={landingCarbonArt} />
+            <img alt="" className='art' src={landingCarbonArt} />
           </div>
           <div className='card right'>
             <h3>Sponsor the Project</h3>
