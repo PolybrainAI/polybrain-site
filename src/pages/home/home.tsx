@@ -17,8 +17,8 @@ export default function Home() {
   const [offset, setOffset] = useState(0);
   const FLIP_DISTANCE = 400; // point on page to flip body color
 
+  // Watch scroll
   var last_offset = 0;
-
   useEffect(() => {
       function onScroll() {
 
@@ -28,25 +28,25 @@ export default function Home() {
         }
 
         last_offset = window.scrollY;
-        setOffset(last_offset);
+        setOffset(window.scrollY);
 
       }
       // clean up code
+      document.body.style.backgroundColor = "#4548A3"
       window.removeEventListener('scroll', onScroll);
       window.addEventListener('scroll', onScroll, { passive: true });
       return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  // Fade in listener
   useEffect(() => {
-    
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        console.log(entry);
         if (entry.isIntersecting){
           entry.target.classList.add("visible")
         }
         else {
-          // Remove visible class here if you want animation to run multiple times
+          entry.target.classList.remove("visible")
         }
       } )
     })
@@ -54,6 +54,27 @@ export default function Home() {
     const fadeElements = document.querySelectorAll(".fade")
     fadeElements.forEach((el) => observer.observe(el));
   }, [])
+
+  // Cursor tracker
+  useEffect(() => {
+
+    const glowElements = document.querySelectorAll(".cursor-glow");
+
+    document.addEventListener("mousemove", (ev) => {
+
+      const x = ev.clientX;
+      const y = ev.clientY;
+      
+      
+      glowElements.forEach((el) => {
+        const element = el as HTMLElement
+        const rect = element.getBoundingClientRect();
+        element.style.background = `radial-gradient(circle at ${x-rect.left}px ${y-rect.top}px, #FFFFFF14 10%, #FFFFFF10 50%)`;
+      })
+
+    })
+
+  })
 
   return (
     <div id="home-page">
@@ -84,12 +105,12 @@ export default function Home() {
 
         <div className='card-container'>
 
-          <div className='card left'>
+          <div className='card left cursor-glow'>
             <h3>Interesting in Contributing?</h3>
             <a>All of the Polybrain source code is open source and available on GitHub</a>
             <img alt="" className='art' src={landingCarbonArt} />
           </div>
-          <div className='card right'>
+          <div className='card right cursor-glow'>
             <h3>Sponsor the Project</h3>
             <a>Polybrain is an independent, self funded project.
               Leave a tip to the creator if you feel so kind.
