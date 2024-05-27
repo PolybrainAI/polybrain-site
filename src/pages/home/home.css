@@ -1,3 +1,12 @@
+@keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 100;
+    }
+  }
+
 #home-page {
     margin: 0;
     margin-top: 78px;
@@ -37,6 +46,7 @@ button {
     right: 0px;
     z-index: 0;
     object-fit: cover;
+    animation: fade-in 3s;
 }
 
 #landing #login {
@@ -82,7 +92,13 @@ button {
     max-width: 60%;
     right: -120px;
     top: 40px;
+    opacity: 0%;
+    transition: 0.7s;
+    transform: translateY(30px);
+}
+#setup-steps .art.visible{
     opacity: 30%;
+    transform: translateY(0px);
 }
 
 #setup-steps .l1 {

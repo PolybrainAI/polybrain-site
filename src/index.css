@@ -78,3 +78,13 @@ code {
     align-items: center;
     flex-direction: column;
 }
+
+.fade{
+  transition: 0.8s;
+  transform: translateY(30px);
+  opacity: 0%;
+}
+.fade.visible{
+  transform: translateY(0px);
+  opacity: 100%;
+}

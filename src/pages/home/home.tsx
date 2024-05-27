@@ -37,7 +37,23 @@ export default function Home() {
       return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const triggerRef = useRef(null);
+  useEffect(() => {
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        console.log(entry);
+        if (entry.isIntersecting){
+          entry.target.classList.add("visible")
+        }
+        else {
+          // Remove visible class here if you want animation to run multiple times
+        }
+      } )
+    })
+    
+    const fadeElements = document.querySelectorAll(".fade")
+    fadeElements.forEach((el) => observer.observe(el));
+  }, [])
 
   return (
     <div id="home-page">
@@ -54,17 +70,17 @@ export default function Home() {
 
       <div id='setup-steps'>
         <img src={landingNumbers} id="enumeration" alt="" />
-        <img src={landingStepsArt} className="art" alt=""/>
+        <img src={landingStepsArt} className="art fade" alt=""/>
         <h2>Let's get you setup</h2>
 
-        <div className='l1'>
+        <div className='l1 fade'>
           <button className='btn-trace' id="signup">Create Account</button>
           <a>or</a>
           <a id="login">Log In</a>
         </div>
 
-        <p className='l2'>Connect your <a href="https://onshape.com" target="_blank" rel="noreferrer">OnShape</a> and <a href="https://platform.openai.com" target="_blank" rel="noreferrer">OpenAI</a> accounts</p>
-        <p className='l3'>Install the <a target="_blank">Chrome Plugin</a></p>
+        <p className='l2 fade'>Connect your <a href="https://onshape.com" target="_blank" rel="noreferrer">OnShape</a> and <a href="https://platform.openai.com" target="_blank" rel="noreferrer">OpenAI</a> accounts</p>
+        <p className='l3 fade'>Install the <a target="_blank">Chrome Plugin</a></p>
 
         <div className='card-container'>
 
