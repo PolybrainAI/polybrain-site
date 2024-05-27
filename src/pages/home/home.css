@@ -2,23 +2,23 @@
     margin: 0;
     margin-top: 78px;
 
-    height: 1000px;
     width: 100%;
     overflow: scroll;
 }
 
-#home-page button {
+button {
     position: relative;
 }
 
-#home-page #landing {
+#landing {
     position: relative;
+    overflow: hidden;
     background-color: #4548A3;
     height: calc(100vh + 30px);
     width: 100%;
 }
 
-#home-page #landing h1 {
+#landing h1 {
     position: relative;
     font-family: "Roboto Flex";
     color: white;
@@ -30,26 +30,26 @@
     z-index: 10;
 }
 
-#home-page #landing img {
+#landing img {
     position: absolute;
-    max-width: 705px;
-    height: 100vh;
+    /* max-width: 705px; */
+    width: 50%;
     right: 0px;
     z-index: 0;
     object-fit: cover;
 }
 
-#home-page #landing #login {
+#landing #login {
     padding: 10px 40px 10px 40px;
     margin-left: 40px;
 }
 
-#home-page #landing #signup {
+#landing #signup {
     padding: 10px 80px 10px 80px;
     margin-left: 92px;
 }
 
-#home-page #setup-steps {
+#setup-steps {
     position: relative;
     top: -30px;
     background-color: #363D43;
@@ -59,7 +59,7 @@
     overflow: hidden;
 }
 
-#home-page #setup-steps h2{
+#setup-steps h2{
     color: white;
     position: relative;
     font-size: 48px;
@@ -68,7 +68,7 @@
     top: 40px;
 }
 
-#home-page #setup-steps #enumeration{
+#setup-steps #enumeration{
     background-color: #363D43;
     position: absolute;
     top: 49px;
@@ -76,7 +76,7 @@
     z-index: 0;
 }
 
-#home-page #setup-steps .art {
+#setup-steps .art {
     position: absolute;
     max-width: 60%;
     right: -120px;
@@ -84,7 +84,7 @@
     opacity: 30%;
 }
 
-#home-page #setup-steps .l1 {
+#setup-steps .l1 {
     color: white;
     position: relative;
     top: 83px;
@@ -92,12 +92,12 @@
     font-size: 20px;
     overflow: visible;
 }
-#home-page #setup-steps .l1 * {
+#setup-steps .l1 * {
     margin-right: 30px;
     position: relative;
 }
 
-#home-page #setup-steps .l1 #login {
+#setup-steps .l1 #login {
     position: relative;
     right: 12px;
     text-decoration: underline;
@@ -105,16 +105,16 @@
     transition: 0.3s;
     border-radius: 7px;
 }
-#home-page #setup-steps .l1 #login:hover {
+#setup-steps .l1 #login:hover {
     background-color: #FFFFFF30;
     cursor: pointer;
 }
 
-#home-page #setup-steps a {
+#setup-steps a {
     color: inherit;
 }
 
-#home-page #setup-steps .l2 {
+#setup-steps .l2 {
     color: #FFFFFFB2;
     font-size: 20px;
     left: 200px;
@@ -122,11 +122,69 @@
     left: 200px;
     top: 180px;
 }
-#home-page #setup-steps .l3 {
+#setup-steps .l3 {
     color: #FFFFFFB2;
     font-size: 20px;
     left: 200px;
     position: relative;
     left: 200px;
     top: 290px;
+}
+
+
+#setup-steps .card-container {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    position: relative;
+    top: 350px;
+}
+
+#setup-steps .card {
+    position: relative;
+    display: inline-block;
+    color: white;
+    background-color: #FFFFFF10;
+    width: 498px;
+    height: 427px;
+    border-radius: 10px;
+    padding: 0px;
+    border: solid;
+    border-width: 1px;
+    border-color: white;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+#setup-steps .card a {
+    display: inline-block;
+    opacity: 50%;
+    font-size: 20px;
+    padding: 0px 20px 0px 20px;
+}
+
+#setup-steps .card h3 {
+    font-size: 36px;
+    font-weight: 400;
+    margin-top: 30px;
+    margin-left: 20px;
+
+}
+
+#setup-steps .card .art {
+    position: absolute;
+    top: auto;
+    opacity: 100%;
+    max-width: 100%;
+    right: 0px;
+    bottom: 0px;
+    border-radius: 0px;
+}
+
+.icon-button {
+    position: relative;
+    display: inline-block;
+    justify-content: center;
+    top: 11px;
+    margin-top: 32px;
 }

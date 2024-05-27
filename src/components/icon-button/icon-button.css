@@ -1,0 +1,36 @@
+.icon-button {
+    position: relative;
+    display: inline-block;
+    border: solid;
+    border-width: 1px;
+    border-color: white;
+    border-radius: 5px;
+    height: 46px;
+    padding-left: 25px;
+    padding-right: 25px;
+    text-align: center;
+    transition: transform 0.3s;
+    
+}
+
+.icon-button:hover {
+    transform: scale(1.02);
+}
+
+.icon-button .icon-text {
+    position: relative;
+    bottom: 2px;
+    margin-left: 30px;
+    font-size: 15px !important;
+    opacity: 100% !important;
+    color: white;
+}
+
+.icon-button .icon {
+    position: relative;
+    display: inline-block;
+    height: 29px;
+    top: 7px;
+    left: 18px;
+    object-fit: cover;
+}
