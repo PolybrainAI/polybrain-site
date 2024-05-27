@@ -64,6 +64,12 @@ export default function Home() {
         </div>
       </div>
 
+      <div id="demo-section">
+        <h1>Polybrain in Action</h1>
+        <p>Check out this demo showcasing how Polybrain can create simple OnShape models</p>
+        <iframe className="yt-video" src="https://www.youtube.com/embed/pkFvQh476Wk?si=aQqa6hHlIdlMSnxJ" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+      </div>
+
     </div>
   );
 }
