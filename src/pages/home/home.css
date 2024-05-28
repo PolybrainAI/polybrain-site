@@ -25,6 +25,7 @@ button {
     background-color: #4548A3;
     height: calc(100vh + 30px);
     width: 100%;
+    top: -90px;
 }
 
 #landing h1 {
@@ -102,7 +103,7 @@ button {
 #setup-steps .l1 {
     color: white;
     position: relative;
-    top: 83px;
+    top: 143px;
     left: 200px;
     font-size: 20px;
     overflow: visible;
@@ -135,7 +136,7 @@ button {
     left: 200px;
     position: relative;
     left: 200px;
-    top: 180px;
+    top: 260px;
 }
 #setup-steps .l3 {
     color: #FFFFFFB2;
@@ -143,7 +144,7 @@ button {
     left: 200px;
     position: relative;
     left: 200px;
-    top: 290px;
+    top: 370px;
 }
 
 
@@ -152,7 +153,7 @@ button {
     justify-content: center;
     gap: 100px;
     position: relative;
-    top: 350px;
+    top: 430px;
 }
 
 #setup-steps .card {
@@ -170,6 +171,7 @@ button {
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     transition: 0.3s;
+    box-shadow: 0px 5px 15px #22272a;
 }
 
 #setup-steps .card:hover {
@@ -222,7 +224,6 @@ button {
 
 #demo-section {
     background-color: #3D646A;
-    margin-top: -80px;
     padding-top: 50px;
     padding-bottom: 200px;
 }

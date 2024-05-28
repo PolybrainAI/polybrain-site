@@ -15,7 +15,7 @@ import paypalLogo from "../../assets/paypal-logo.svg"
 export default function Home() {
 
   const [offset, setOffset] = useState(0);
-  const FLIP_DISTANCE = 400; // point on page to flip body color
+  const FLIP_DISTANCE = 1200; // point on page to flip body color
 
   // Watch scroll
   var last_offset = 0;
@@ -38,7 +38,7 @@ export default function Home() {
       return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // Fade in listener
+  // fade-with-vis in listener
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -51,7 +51,7 @@ export default function Home() {
       } )
     })
     
-    const fadeElements = document.querySelectorAll(".fade")
+    const fadeElements = document.querySelectorAll(".fade-with-vis")
     fadeElements.forEach((el) => observer.observe(el));
   }, [])
 
@@ -82,26 +82,32 @@ export default function Home() {
 
       <div id="landing">
         <img id="landing-art" alt="landing art" src={landingArt} style={{top: (offset < window.innerHeight) ? -offset/4 : -1e4}}/>
-        <h1>Building Parametric CAD with AI</h1>
+        <div className='align-center-vert'>
+          <div>
 
-        <button className='btn-fill btn-glow' id="signup">Get Started</button>
+            <h1>Building Parametric CAD with AI</h1>
+
+
+            <button className='btn-fill btn-glow' id="signup">Get Started</button>
         <button className='btn-trace' id="login">Log In</button>
+          </div>
+        </div>
 
       </div>
 
       <div id='setup-steps'>
         <img src={landingNumbers} id="enumeration" alt="" />
-        <img src={landingStepsArt} className="art fade" alt=""/>
+        <img src={landingStepsArt} className="art fade-with-vis" alt=""/>
         <h2>Let's get you setup</h2>
 
-        <div className='l1 fade'>
+        <div className='l1 fade-with-vis'>
           <button className='btn-trace' id="signup">Create Account</button>
           <a>or</a>
           <a id="login">Log In</a>
         </div>
 
-        <p className='l2 fade'>Connect your <a href="https://onshape.com" target="_blank" rel="noreferrer">OnShape</a> and <a href="https://platform.openai.com" target="_blank" rel="noreferrer">OpenAI</a> accounts</p>
-        <p className='l3 fade'>Install the <a target="_blank">Chrome Plugin</a></p>
+        <p className='l2 fade-with-vis'>Connect your <a href="https://onshape.com" target="_blank" rel="noreferrer">OnShape</a> and <a href="https://platform.openai.com" target="_blank" rel="noreferrer">OpenAI</a> accounts</p>
+        <p className='l3 fade-with-vis'>Install the <a target="_blank">Chrome Plugin</a></p>
 
         <div className='card-container'>
 
@@ -131,7 +137,7 @@ export default function Home() {
       <div id="demo-section">
         <h1>Polybrain in Action</h1>
         <p>Check out this demo showcasing how Polybrain can create simple OnShape models</p>
-        <iframe className="yt-video" src="https://www.youtube.com/embed/pkFvQh476Wk?si=aQqa6hHlIdlMSnxJ" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+        <iframe className="yt-video" src="https://www.youtube.com/embed/pkFvQh476Wk?si=aQqa6hHlIdlMSnxJ" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
       </div>
 
     </div>
