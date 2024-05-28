@@ -4,7 +4,7 @@ import './header.css';
 
 export default function Header() {
   return (
-    <div className="header">
+    <div id="header">
 
       <img src={logo} className="logo"/>
       <a className="logo-font">Polybrain</a>

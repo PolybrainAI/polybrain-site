@@ -1,4 +1,4 @@
-.header {
+#header {
     background-color: #363D43;
     height: 78px ;
     width: 100%;
@@ -8,7 +8,7 @@
     z-index: 100;
 }
 
-.header .logo-font {
+#header .logo-font {
     color: white;
     font-size: 36px;
     letter-spacing: 3px;
@@ -16,9 +16,10 @@
     top: -10px;
     left: 15px;
     cursor: default;
+    text-decoration: none;
 }
 
-.header .header-link {
+#header .header-link {
     position: relative;
     top: -15px;
     left: 40px;
@@ -28,14 +29,15 @@
     transition: 0.3s;
     padding: 10px 20px 10px 20px;
     border-radius: 5px;
+    text-decoration: none;
 }
 
-.header .header-link:hover{
+#header .header-link:hover{
     background-color: #FFFFFF30;
     cursor: pointer;
 }
 
-.header #signup {
+#header #signup {
     position: fixed;
     border-width: 1px;
     border-color: white;
@@ -49,12 +51,12 @@
     text-align: center;
 }
 
-.header #signup:hover {
+#header #signup:hover {
     color: #363D43;
     background-color: white;
 }
 
-.header #login {
+#header #login {
     position: fixed;
     right: 160px;
     left: auto;
