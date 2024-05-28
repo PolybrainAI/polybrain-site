@@ -4,6 +4,7 @@ import Accordion from 'react-bootstrap/Accordion';
 
 import Header from "../../components/header/header"
 import "./portal.css"
+import Footer from "../../components/footer/footer";
 
 export default function Portal() {
 
@@ -83,7 +84,60 @@ export default function Portal() {
                     <Accordion.Item eventKey="1">
                         <Accordion.Header><i className="bi bi-2-circle accordion-title-icon"></i><section className="accordion-title-text">Connect your OnShape and OpenAI Accounts</section></Accordion.Header>
                         <Accordion.Body>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+
+                            <h3>OnShape:</h3>
+                            <p>Polybrain is a chrome extension, not an OnShape cloud connected app.
+                                For this reason, we cannot use the OnShape OAuth system.
+                                Instead, you will need to provide OnShape developer keys, available at dev-portal.onshape.com/keys.
+                            </p>
+
+                            <div className="flexbox">
+                                <div className="accordion-section-left">
+                                    <label>
+                                        <p>Access Key</p>
+                                        <input className="text-input secret" placeholder="Paste your access key here" type="password"/>
+                                    </label>
+                                    <label>
+                                        <p>Secret Key</p>
+                                        <input className="text-input secret" placeholder="Paste your access key here" type="password"/>
+                                    </label>
+                                    <div>
+                                        <button className="btn-fill dark save" id="save-onshape-input">Save</button>
+                                        <button className="btn-trace dark cancel" id="cancel-onshape-input">Cancel</button>
+                                    </div>
+                                </div>
+                                <div className="accordion-section-right ">
+                                <div>
+                                    <iframe src="https://www.youtube.com/embed/NpEaa2P7qZI?si=HMnP10Q78w7sKQWz" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                                </div>
+                                </div>
+                            </div>
+                            <br></br>
+                            <h3>OpenAI:</h3>
+                            <p>To avoid handling transactions, Polybrain connects directly to the user's OpenAI account to make LLM requests. 
+                                If Polybrain is successful, it may eventually move to its own token system. 
+                                If you do not have an OpenAI account, you can create one at <a href="https://platform.openai.com/signup" target="_blank" rel="noreferrer">platform.openai.com/signup</a>.
+                            </p>
+
+                            <div className="flexbox">
+                                <div className="accordion-section-left">
+                                    <label id="openai-api-key-label">
+                                        <p>API Key</p>
+                                        <input id="openai-api-key" className="text-input secret" placeholder="Paste your OpenAI API key here" type="password"/>
+                                    </label>
+                                    <div>
+                                        <button className="btn-fill dark save" id="save-openai-input">Save</button>
+                                        <button className="btn-trace dark cancel" id="cancel-openai-input">Cancel</button>
+                                    </div>
+                                </div>
+                                <div className="accordion-section-right ">
+                                <div>
+                                    <iframe src="https://www.youtube.com/embed/NpEaa2P7qZI?si=HMnP10Q78w7sKQWz" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                                </div>
+                                </div>
+                            </div>
+
+
                         </Accordion.Body>
                     </Accordion.Item>
                 </Accordion>
@@ -91,11 +145,12 @@ export default function Portal() {
                     <Accordion.Item eventKey="2">
                         <Accordion.Header><i className="bi bi-3-circle accordion-title-icon"></i><section className="accordion-title-text">Install the Chrome Plugin</section></Accordion.Header>
                         <Accordion.Body>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                            Polybrain is coming to the Chrome Store soon. Hold tight!
                         </Accordion.Body>
                     </Accordion.Item>
                 </Accordion>
             </div>
         </div>
+        <Footer />
     </div>
 }
