@@ -5,17 +5,38 @@ import Accordion from 'react-bootstrap/Accordion';
 import Header from "../../components/header/header"
 import "./portal.css"
 import Footer from "../../components/footer/footer";
+import { useNavigate } from "react-router-dom";
+import { logOut, isLoggedIn, getUserInfo } from "../../api/api";
 
 export default function Portal() {
 
-    const [username, setUsernmae] = useState("John");
-
+    const navigate = useNavigate();
+    const [username, setUsernmae] = useState("");
     const [selectedMenu, setSelectedMenu] = useState("main-portal")
 
+    // Redirect if not logged in
     useEffect(() => {
+        document.body.style.backgroundColor = "white"; // sometimes leftover from home page
 
+        
+        async function inner(){
+            const user_info = await getUserInfo();
+
+            if (user_info === null){
+                window.location.href = "http://localhost:3000/";
+            }
+            else{
+                console.log(`setting username to ${user_info.given_name}`)
+                console.log(user_info)
+                setUsernmae(user_info.given_name)
+        }}
+        inner()
+
+    }, [])
+
+    // Click handler for menu items
+    useEffect(() => {
         const menu_items = document.querySelectorAll(".left > .btn-list-item")
-
         function menuClickHandle(event: Event) {
 
             const selectedElement = event.target;
@@ -55,6 +76,10 @@ export default function Portal() {
                     <i className="bi bi-gear"></i>
                     More Settings
                 </button>
+                <button className="btn-list-item" onClick={(ev) => {logOut()}}>
+                    <i className="bi bi-door-open"></i>
+                    Log Out
+                </button>
                 <button className="btn-list-item" style={{ color: "#E63939", top: "10px" }}>
                     <i className="bi bi-exclamation-triangle"></i>
                     Delete Account
@@ -82,7 +107,7 @@ export default function Portal() {
                 </Accordion>
                 <Accordion>
                     <Accordion.Item eventKey="1">
-                        <Accordion.Header><i className="bi bi-2-circle accordion-title-icon"></i><section className="accordion-title-text">Connect your OnShape and OpenAI Accounts</section></Accordion.Header>
+                        <Accordion.Header><i className="bi bi-2-circle accordion-title-icon"></i><section className="accordion-title-text" aria-expanded="true">Connect your OnShape and OpenAI Accounts</section></Accordion.Header>
                         <Accordion.Body>
 
                             <h3>OnShape:</h3>
