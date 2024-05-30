@@ -76,8 +76,7 @@ export default function Home() {
 
   })
 
-  return (
-    <div id="home-page">
+  return <div id="home-page">
       <Header></Header>
 
       <div id="landing">
@@ -141,5 +140,5 @@ export default function Home() {
       </div>
 
     </div>
-  );
+
 }

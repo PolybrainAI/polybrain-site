@@ -64,6 +64,33 @@
     left: auto;
 }
 
+#header #profile{
+    color: white;
+    transition: 0.2s;
+    position: fixed;
+    border-width: 1px;
+    border-color: white;
+    border: solid;
+    padding: 10px;
+    border-radius: 7px;
+    right: 20px;
+    left: auto;
+    width: 107px;
+    text-align: center;
+    font-size: 18px;
+}
+#header #profile p{
+    display: inline-block;
+    margin: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#header #profile:hover {
+    color: #363D43;
+    background-color: white;
+    cursor: pointer;
+}
+
 .logo {
     position: relative;
     height: 60px;
