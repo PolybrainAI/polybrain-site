@@ -2,6 +2,10 @@ import { UserInfo } from "./datamodel";
 
 export const API_BASE = "http://localhost:8000/";
 
+
+window.user_info = null;
+window.last_updated = new Date();
+
 /**
  * Gets a cookie from the browser
  * @param name The name of the cookie
@@ -39,26 +43,36 @@ export async function isLoggedIn(): Promise<boolean> {
  * @returns a UserInfo object, or null if the user is not logged in
  */
 export async function getUserInfo(): Promise<UserInfo | null> {
-  const jwt = getCookie("polybrain-session");
+  const time_elapsed = (new Date()).getTime() - window.last_updated.getTime();
 
-  if (jwt == null) {
-    console.debug("no JWT found");
-    return null;
-  } else {
-    const user_response = await fetch(`${API_BASE}auth0/user-data`, {
-      method: "GET",
-      credentials: "include",
-    });
+  if (window.user_info === null || time_elapsed > 3600){
+    const jwt = getCookie("polybrain-session");
 
-    if (user_response.status === 403) {
-      console.debug("user is not logged in");
+    if (jwt == null) {
+      console.debug("no JWT found");
+      return null;
     } else {
-      const user_info: UserInfo = await user_response.json();
-      return user_info;
-    }
-  }
+      const user_response = await fetch(`${API_BASE}auth0/user-data`, {
+        method: "GET",
+        credentials: "include",
+      });
 
-  return null;
+      if (user_response.status === 403) {
+        console.debug("user is not logged in");
+      } else {
+        window.user_info = await user_response.json();
+        window.last_updated = new Date();
+      }
+    }
+
+  }
+  else {
+    console.log("using local cache")
+  }
+  
+
+  return window.user_info;
+  
 }
 
 /**

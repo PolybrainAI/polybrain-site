@@ -11,23 +11,36 @@ import landingStepsArt from "../../assets/landing-steps-art.png"
 import landingCarbonArt from "../../assets/landing-carbon-art.png"
 import kofiLogo from "../../assets/kofi-logo.svg"
 import paypalLogo from "../../assets/paypal-logo.svg"
+import { isLoggedIn } from '../../api/api';
 
 export default function Home() {
 
   const [offset, setOffset] = useState(0);
+  const [loggedIn, setLoggedIn] = useState(false);
   const FLIP_DISTANCE = 1200; // point on page to flip body color
 
+  // Check if logged in 
+  useEffect(() => {
+
+    async function inner() {
+      setLoggedIn(await isLoggedIn());
+    }
+    inner();
+
+  }, []);
+
   // Watch scroll
-  var last_offset = 0;
+  var last_offset = useRef(0);
+  // var last_offset = 0;
   useEffect(() => {
       function onScroll() {
 
         // flip body color depending on location
-        if ((window.scrollY - FLIP_DISTANCE) * (last_offset - FLIP_DISTANCE) < 1){
+        if ((window.scrollY - FLIP_DISTANCE) * (last_offset.current - FLIP_DISTANCE) < 1){
           document.body.style.backgroundColor = (window.scrollY < FLIP_DISTANCE) ? "#4548A3" : "#3D646A"
         }
 
-        last_offset = window.scrollY;
+        last_offset.current = window.scrollY;
         setOffset(window.scrollY);
 
       }
@@ -88,7 +101,7 @@ export default function Home() {
 
 
             <button className='btn-fill btn-glow' id="signup">Get Started</button>
-        <button className='btn-trace' id="login">Log In</button>
+        <button className='btn-trace' id="login" style={{display: loggedIn ? "none" : "inline-block"}}>Log In</button>
           </div>
         </div>
 
