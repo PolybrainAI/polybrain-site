@@ -17,3 +17,14 @@ export interface UserInfo {
   }
 
 
+export interface UserUploadRequest{
+  onshape_access: string|null,
+  onshape_secret: string|null,
+  openai_api: string|null,
+}
+
+export interface UserCredentialPreview{
+  has_onshape_access: boolean,
+  has_onshape_secret: boolean,
+  has_openai_api: boolean
+}

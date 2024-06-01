@@ -1,4 +1,4 @@
-import { UserInfo } from "./datamodel";
+import { UserCredentialPreview, UserInfo, UserUploadRequest } from "./datamodel";
 
 export const API_BASE = "http://localhost:8000/";
 
@@ -39,7 +39,7 @@ export async function isLoggedIn(): Promise<boolean> {
 }
 
 /**
- * Gets the info about a logged in user
+ * Gets the info about a logged in user. Caches response in window.user_info
  * @returns a UserInfo object, or null if the user is not logged in
  */
 export async function getUserInfo(): Promise<UserInfo | null> {
@@ -75,6 +75,24 @@ export async function getUserInfo(): Promise<UserInfo | null> {
   
 }
 
+
+export async function getCredentialPreview(): Promise<UserCredentialPreview | null> {
+  const response = await fetch(`${API_BASE}credentials/preview`, {
+    method: "GET",
+    credentials: "include",
+  });
+
+  if (response.ok){
+    return await response.json()
+  }
+  else{
+    const raw_text = await response.text();
+    console.warn(`Failed to fetch credential preview:\n${raw_text}`)
+    return null
+  }
+
+}
+
 /**
  * Logs out of the current user
  */
@@ -88,4 +106,56 @@ export async function logOut(): Promise<boolean> {
   window.location.replace(`${API_BASE}auth0/logout`);
 
   return true;
+}
+
+
+/**
+ * Uploads credentials to the server
+ * @param credentials The credentials to upload
+ */
+type CallbackMessage = (message: string) => void;
+export async function uploadCredentials(credentials: UserUploadRequest, error_callback: CallbackMessage, success_callback: CallbackMessage): Promise<object>{
+
+  // Filter out any placeholder values
+  if (credentials.onshape_access !== null && /^0+$/.test(credentials.onshape_access)){
+    console.warn("Removing placeholder onshape_access for upload")
+    credentials.onshape_access = null
+  }
+  if (credentials.onshape_secret !== null && /^0+$/.test(credentials.onshape_secret)){
+    console.warn("Removing placeholder onshape_secret for upload")
+    credentials.onshape_secret = null
+  }
+  if (credentials.openai_api !== null && /^0+$/.test(credentials.openai_api)){
+    console.warn("Removing placeholder openai for upload")
+    credentials.openai_api = null
+  }
+
+
+  const response = await fetch(`${API_BASE}credentials/upload`, {
+    method: "POST",
+    credentials: "include",
+    mode: "cors",
+    cache: "no-cache",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(credentials)
+  });
+
+  const response_json = await response.json();
+
+  console.log(`Got response from server:`);
+  console.log(response_json)
+
+  if (response_json.error_type === "BadRequest"){
+    error_callback(response_json.message)
+  }
+  else if (response_json.error_type !== undefined){
+    error_callback(`Unhandled Error: ${response_json.message}`)
+  }
+  else if (response_json.success){
+    success_callback("Successfully updated credentials")
+  }
+
+  return response_json;
 }
