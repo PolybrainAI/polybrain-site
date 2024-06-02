@@ -195,6 +195,7 @@ button {
     opacity: 50%;
     font-size: 20px;
     padding: 0px 20px 0px 20px;
+    text-decoration: none;
 }
 
 #setup-steps .card h3 {

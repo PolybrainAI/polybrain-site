@@ -11,7 +11,7 @@ import landingStepsArt from "../../assets/landing-steps-art.png"
 import landingCarbonArt from "../../assets/landing-carbon-art.png"
 import kofiLogo from "../../assets/kofi-logo.svg"
 import paypalLogo from "../../assets/paypal-logo.svg"
-import { isLoggedIn } from '../../api/api';
+import { API_BASE, isLoggedIn } from '../../api/api';
 
 export default function Home() {
 
@@ -89,6 +89,10 @@ export default function Home() {
 
   })
 
+  function redirectToLogin(){
+    window.location.href = `${API_BASE}auth0/login`
+  }
+
   return <div id="home-page">
       <Header></Header>
 
@@ -100,8 +104,8 @@ export default function Home() {
             <h1>Building Parametric CAD with AI</h1>
 
 
-            <button className='btn-fill btn-glow' id="signup">Get Started</button>
-        <button className='btn-trace' id="login" style={{display: loggedIn ? "none" : "inline-block"}}>Log In</button>
+            <button className='btn-fill btn-glow' id="signup" onClick={redirectToLogin}>Get Started</button>
+        <button className='btn-trace' id="login" onClick={redirectToLogin} style={{display: loggedIn ? "none" : "inline-block"}}>Log In</button>
           </div>
         </div>
 
@@ -113,9 +117,9 @@ export default function Home() {
         <h2>Let's get you setup</h2>
 
         <div className='l1 fade-with-vis'>
-          <button className='btn-trace' id="signup">Create Account</button>
+          <button className='btn-trace' id="signup" onClick={redirectToLogin}>Create Account</button>
           <a>or</a>
-          <a id="login">Log In</a>
+          <a id="login" href={`${API_BASE}auth0/login`}>Log In</a>
         </div>
 
         <p className='l2 fade-with-vis'>Connect your <a href="https://onshape.com" target="_blank" rel="noreferrer">OnShape</a> and <a href="https://platform.openai.com" target="_blank" rel="noreferrer">OpenAI</a> accounts</p>
@@ -123,22 +127,22 @@ export default function Home() {
 
         <div className='card-container'>
 
-          <div className='card left cursor-glow'>
-            <h3>Interesting in Contributing?</h3>
-            <a>All of the Polybrain source code is open source and available on GitHub</a>
+          <div className='card left cursor-glow' onClick={() => {window.open("https://github.com/PolybrainAI", '_blank')?.focus();}}>
+            <h3 className='noselect'>Interesting in Contributing?</h3>
+            <a className='noselect'>All of the Polybrain source code is open source and available on GitHub</a>
             <img alt="" className='art' src={landingCarbonArt} />
           </div>
           <div className='card right cursor-glow'>
-            <h3>Sponsor the Project</h3>
-            <a>Polybrain is an independent, self funded project.
+            <h3 className='noselect'>Sponsor the Project</h3>
+            <a className='noselect'>Polybrain is an independent, self funded project.
               Leave a tip to the creator if you feel so kind.
               Anything is greatly appreciated!</a>
 
             <div className='flex-center-vert'>
 
 
-              <IconButton icon={kofiLogo} text="Support us with KoFi" background_color="#FFB3B31A" text_color='white' width='270px' />
-              <IconButton icon={paypalLogo} text="Donate through PayPal" background_color="#B3D6FF1A" text_color='white' width='270px' />
+              <IconButton icon={kofiLogo} text="Support me on KoFi" background_color="#FFB3B31A" text_color='white' width='270px' onClick={() => {window.open("https://ko-fi.com/kyletennison", '_blank')?.focus()}} />
+              <IconButton icon={paypalLogo} text="Donate through PayPal" background_color="#B3D6FF1A" text_color='white' width='270px' onClick={() => {window.open("https://donate.kyletennison.com", '_blank')?.focus()}} />
 
             </div>
 
