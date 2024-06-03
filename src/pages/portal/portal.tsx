@@ -19,7 +19,8 @@ import {
 export default function Portal() {
   const ALERT_SHOW_TIME = 5000; // 5s
 
-  const [username, setUsernmae] = useState("");
+  const [username, setUsername] = useState("");
+  const [userEmail, setUserEmail] = useState("");
   const [alertContents, setAlertContents] = useState("");
   const [alertSeverity, setAlertSeverity] = useState("error");
   var sleep_id = useRef("");
@@ -30,6 +31,7 @@ export default function Portal() {
   const [allDevKeysLoaded, setAllDevKeysLoaded] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedMenu, setSelectedMenu] = useState("main-menu-btn")
+  const [deleteCheckText, setDeleteCheckTest] = useState("");
 
   async function load_default_key_states() {
     const credential_preview = await getCredentialPreview();
@@ -84,7 +86,8 @@ export default function Portal() {
       if (user_info === null) {
         window.location.href = "http://localhost:3000/";
       } else {
-        setUsernmae(user_info.username);
+        setUsername(user_info.username);
+        setUserEmail(user_info.email);
       }
     }
     inner();
@@ -198,10 +201,20 @@ export default function Portal() {
             onClose={(ev) => {
               setModalOpen(false);
               setSelectedMenu("main-menu-btn")
-            
             }}
         >
-          <h1>hi</h1>
+          <div id="delete-popup">
+            <h2>You can't undo this!</h2>
+            <p>Once you delete your account, it's gone. We delete all of the information you provided to us.
+              To delete you account, type your email address below.
+            </p>
+            <input placeholder={userEmail} value={deleteCheckText}  onChange={(ev) => {setDeleteCheckTest(ev.target.value)}} type="text"/>
+            <div className="btn-container">
+              <button className="cancel" onClick={(ev)=>{setModalOpen(false); setSelectedMenu("main-menu-btn")}}>Cancel</button>
+              <button className="delete" disabled={(userEmail !== deleteCheckText)}>Delete</button>
+            </div>
+
+          </div>
         </Popup>
         <div className="right">
           <p>
