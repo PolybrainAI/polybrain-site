@@ -1,36 +1,35 @@
 .icon-button {
-    position: relative;
-    display: flex;
-    align-items: baseline;
-    border: solid;
-    border-width: 1px;
-    border-color: white;
-    border-radius: 5px;
-    height: 46px;
-    /* padding-left: 25px;
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  border: solid;
+  border-width: 1px;
+  border-color: white;
+  border-radius: 5px;
+  height: 46px;
+  /* padding-left: 25px;
     padding-right: 25px; */
-    text-align: center;
-    transition: transform 0.3s;
-    
+  text-align: center;
+  transition: transform 0.3s;
 }
 
 .icon-button:hover {
-    transform: scale(1.02);
+  transform: scale(1.02);
 }
 
 .icon-button .icon-text {
-    position: relative;
-    font-size: 15px !important;
-    opacity: 100% !important;
-    color: white;
-    text-decoration: none;
-    margin-left: 20px;
+  position: relative;
+  font-size: 15px !important;
+  opacity: 100% !important;
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
 }
 
 .icon-button .icon {
-    position: relative;
-    height: 29px;
-    top: 7px;
-    left: 18px;
-    object-fit: cover;
+  position: relative;
+  height: 29px;
+  top: 7px;
+  left: 18px;
+  object-fit: cover;
 }

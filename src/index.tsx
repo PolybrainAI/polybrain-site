@@ -1,17 +1,14 @@
-import React, { ReactNode } from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import Home from './pages/home/home';
-import Portal from './pages/portal/portal'
-import 'font-awesome/css/font-awesome.min.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import React, { ReactNode } from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import Home from "./pages/home/home";
+import Portal from "./pages/portal/portal";
+import "font-awesome/css/font-awesome.min.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement,
 );
 
 const router = createBrowserRouter([
@@ -32,5 +29,5 @@ const router = createBrowserRouter([
 root.render(
   <React.StrictMode>
     <RouterProvider router={router} />
-  </React.StrictMode>
+  </React.StrictMode>,
 );

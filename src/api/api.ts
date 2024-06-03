@@ -1,7 +1,11 @@
-import { UserCredentialPreview, UserInfo, UserUploadRequest } from "./datamodel";
+import {
+  UserCredentialPreview,
+  UserInfo,
+  UserUploadRequest,
+} from "./datamodel";
 
+// export const API_BASE = "http://polybrain.xyz/";
 export const API_BASE = "http://localhost:8000/";
-
 
 window.user_info = null;
 window.last_updated = new Date();
@@ -43,9 +47,9 @@ export async function isLoggedIn(): Promise<boolean> {
  * @returns a UserInfo object, or null if the user is not logged in
  */
 export async function getUserInfo(): Promise<UserInfo | null> {
-  const time_elapsed = (new Date()).getTime() - window.last_updated.getTime();
+  const time_elapsed = new Date().getTime() - window.last_updated.getTime();
 
-  if (window.user_info === null || time_elapsed > 3600){
+  if (window.user_info === null || time_elapsed > 3600) {
     const jwt = getCookie("polybrain-session");
 
     if (jwt == null) {
@@ -64,17 +68,12 @@ export async function getUserInfo(): Promise<UserInfo | null> {
         window.last_updated = new Date();
       }
     }
-
+  } else {
+    console.log("using local cache");
   }
-  else {
-    console.log("using local cache")
-  }
-  
 
   return window.user_info;
-  
 }
-
 
 export async function getCredentialPreview(): Promise<UserCredentialPreview | null> {
   const response = await fetch(`${API_BASE}credentials/preview`, {
@@ -82,15 +81,13 @@ export async function getCredentialPreview(): Promise<UserCredentialPreview | nu
     credentials: "include",
   });
 
-  if (response.ok){
-    return await response.json()
-  }
-  else{
+  if (response.ok) {
+    return await response.json();
+  } else {
     const raw_text = await response.text();
-    console.warn(`Failed to fetch credential preview:\n${raw_text}`)
-    return null
+    console.warn(`Failed to fetch credential preview:\n${raw_text}`);
+    return null;
   }
-
 }
 
 /**
@@ -108,28 +105,35 @@ export async function logOut(): Promise<boolean> {
   return true;
 }
 
-
 /**
  * Uploads credentials to the server
  * @param credentials The credentials to upload
  */
 type CallbackMessage = (message: string) => void;
-export async function uploadCredentials(credentials: UserUploadRequest, error_callback: CallbackMessage, success_callback: CallbackMessage): Promise<object>{
-
+export async function uploadCredentials(
+  credentials: UserUploadRequest,
+  error_callback: CallbackMessage,
+  success_callback: CallbackMessage,
+): Promise<object> {
   // Filter out any placeholder values
-  if (credentials.onshape_access !== null && /^0+$/.test(credentials.onshape_access)){
-    console.warn("Removing placeholder onshape_access for upload")
-    credentials.onshape_access = null
+  if (
+    credentials.onshape_access !== null &&
+    /^0+$/.test(credentials.onshape_access)
+  ) {
+    console.warn("Removing placeholder onshape_access for upload");
+    credentials.onshape_access = null;
   }
-  if (credentials.onshape_secret !== null && /^0+$/.test(credentials.onshape_secret)){
-    console.warn("Removing placeholder onshape_secret for upload")
-    credentials.onshape_secret = null
+  if (
+    credentials.onshape_secret !== null &&
+    /^0+$/.test(credentials.onshape_secret)
+  ) {
+    console.warn("Removing placeholder onshape_secret for upload");
+    credentials.onshape_secret = null;
   }
-  if (credentials.openai_api !== null && /^0+$/.test(credentials.openai_api)){
-    console.warn("Removing placeholder openai for upload")
-    credentials.openai_api = null
+  if (credentials.openai_api !== null && /^0+$/.test(credentials.openai_api)) {
+    console.warn("Removing placeholder openai for upload");
+    credentials.openai_api = null;
   }
-
 
   const response = await fetch(`${API_BASE}credentials/upload`, {
     method: "POST",
@@ -139,22 +143,20 @@ export async function uploadCredentials(credentials: UserUploadRequest, error_ca
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(credentials)
+    body: JSON.stringify(credentials),
   });
 
   const response_json = await response.json();
 
   console.log(`Got response from server:`);
-  console.log(response_json)
+  console.log(response_json);
 
-  if (response_json.error_type === "BadRequest"){
-    error_callback(response_json.message)
-  }
-  else if (response_json.error_type !== undefined){
-    error_callback(`Unhandled Error: ${response_json.message}`)
-  }
-  else if (response_json.success){
-    success_callback("Successfully updated credentials")
+  if (response_json.error_type === "BadRequest") {
+    error_callback(response_json.message);
+  } else if (response_json.error_type !== undefined) {
+    error_callback(`Unhandled Error: ${response_json.message}`);
+  } else if (response_json.success) {
+    success_callback("Successfully updated credentials");
   }
 
   return response_json;

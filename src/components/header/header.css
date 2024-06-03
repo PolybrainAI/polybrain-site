@@ -1,97 +1,96 @@
 #header {
-    background-color: #363D43;
-    height: 65px ;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 100;
+  background-color: #363d43;
+  height: 65px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
 }
 
-#header .flexbox{
-    height: 100%;
-    align-items: center;
+#header .flexbox {
+  height: 100%;
+  align-items: center;
 }
 
 #header .logo-font {
-    color: white;
-    font-size: 36px;
-    letter-spacing: 3px;
-    position: relative;
-    left: 15px;
-    cursor: pointer;
-    text-decoration: none;
+  color: white;
+  font-size: 36px;
+  letter-spacing: 3px;
+  position: relative;
+  left: 15px;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 #header .header-link {
-    position: relative;
-    left: 40px;
-    color: white;
-    margin: 0px 10px 0px 10px;
-    font-size: 18px;
-    transition: 0.3s;
-    padding: 7px 20px 7px 20px;
-    border-radius: 5px;
-    text-decoration: none;
+  position: relative;
+  left: 40px;
+  color: white;
+  margin: 0px 10px 0px 10px;
+  font-size: 18px;
+  transition: 0.3s;
+  padding: 7px 20px 7px 20px;
+  border-radius: 5px;
+  text-decoration: none;
 }
 
-#header .header-link:hover{
-    background-color: #FFFFFF30;
-    cursor: pointer;
+#header .header-link:hover {
+  background-color: #ffffff30;
+  cursor: pointer;
 }
 
 #header #signup {
-    position: fixed;
-    border-width: 1px;
-    border-color: white;
-    border: solid;
-    padding: 10px;
-    border-radius: 7px;
-    right: 20px;
-    left: auto;
-    width: 107px;
-    text-align: center;
+  position: fixed;
+  border: 1.2px solid white;
+  padding: 10px;
+  border-radius: 7px;
+  right: 20px;
+  left: auto;
+  width: 107px;
+  text-align: center;
+  box-sizing: content-box;
 }
 
 #header #signup:hover {
-    color: #363D43;
-    background-color: white;
+  color: #363d43;
+  background-color: white;
 }
 
 #header #login {
-    position: fixed;
-    right: 160px;
-    left: auto;
+  position: fixed;
+  right: 160px;
+  left: auto;
 }
 
-#header #profile{
-    color: white;
-    transition: 0.2s;
-    position: fixed;
-    border-width: 1px;
-    border-color: white;
-    border: solid;
-    padding: 10px;
-    border-radius: 7px;
-    right: 20px;
-    left: auto;
-    width: 107px;
-    text-align: center;
-    font-size: 18px;
+#header #profile {
+  color: white;
+  transition: 0.2s;
+  position: fixed;
+  border-width: 1px;
+  border-color: white;
+  border: solid;
+  padding: 10px;
+  border-radius: 7px;
+  right: 20px;
+  left: auto;
+  width: 107px;
+  text-align: center;
+  font-size: 18px;
 }
-#header #profile p{
-    display: inline-block;
-    margin: 0px;
-    padding-left: 10px;
-    padding-right: 10px;
+#header #profile p {
+  display: inline-block;
+  margin: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 #header #profile:hover {
-    color: #363D43;
-    background-color: white;
-    cursor: pointer;
+  color: #363d43;
+  background-color: white;
+  cursor: pointer;
 }
 
 .logo {
-    position: relative;
-    height: 60px;
-  } 
+  position: relative;
+  height: 60px;
+}
