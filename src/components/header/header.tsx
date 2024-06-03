@@ -37,7 +37,7 @@ export default function Header() {
         <a className="header-link">FAQ</a>
 
         <a className='header-link' id="login" href={`${API_BASE}auth0/login`} style={{ display: loggedIn ? "none" : "block" }}>Log In</a>
-        <a className='header-link' id="signup" style={{ display: loggedIn ? "none" : "block" }}>Sign Up</a>
+        <a className='header-link' id="signup" href={`${API_BASE}auth0/login`} style={{ display: loggedIn ? "none" : "block" }}>Sign Up</a>
 
         <div
           className='header'

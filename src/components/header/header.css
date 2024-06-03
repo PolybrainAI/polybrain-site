@@ -42,15 +42,14 @@
 
 #header #signup {
     position: fixed;
-    border-width: 1px;
-    border-color: white;
-    border: solid;
+    border: 1.2px solid white;
     padding: 10px;
     border-radius: 7px;
     right: 20px;
     left: auto;
     width: 107px;
     text-align: center;
+    box-sizing: content-box;
 }
 
 #header #signup:hover {
