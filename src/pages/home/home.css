@@ -1,256 +1,254 @@
 @keyframes fade-in {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 100;
-    }
+  from {
+    opacity: 0;
   }
+  to {
+    opacity: 100;
+  }
+}
 
 #home-page {
-    margin: 0;
-    margin-top: 78px;
+  margin: 0;
+  margin-top: 78px;
 
-    width: 100%;
-    overflow: scroll;
+  width: 100%;
+  overflow: scroll;
 }
 
 button {
-    position: relative;
+  position: relative;
 }
 
 #landing {
-    position: relative;
-    overflow: hidden;
-    background-color: #4548A3;
-    height: calc(100vh + 30px);
-    width: 100%;
-    top: -90px;
+  position: relative;
+  overflow: hidden;
+  background-color: #4548a3;
+  height: calc(100vh + 30px);
+  width: 100%;
+  top: -90px;
 }
 
 #landing h1 {
-    position: relative;
-    font-family: "Roboto Flex";
-    color: white;
-    font-weight: 400;
-    font-size: 6vw;
-    width: 50%;
-    padding-top: 5%;
-    margin-left: 6%;
-    z-index: 10;
+  position: relative;
+  font-family: "Roboto Flex";
+  color: white;
+  font-weight: 400;
+  font-size: 6vw;
+  width: 50%;
+  padding-top: 5%;
+  margin-left: 6%;
+  z-index: 10;
 }
 
 #landing img {
-    position: fixed;
-    /* max-width: 705px; */
-    width: 50%;
-    right: 0px;
-    z-index: 0;
-    object-fit: cover;
-    animation: fade-in 3s;
+  position: fixed;
+  /* max-width: 705px; */
+  width: 50%;
+  right: 0px;
+  z-index: 0;
+  object-fit: cover;
+  animation: fade-in 3s;
 }
 
 #landing #login {
-    padding: 10px 40px 10px 40px;
-    margin-left: 40px;
+  padding: 10px 40px 10px 40px;
+  margin-left: 40px;
 }
 
 #landing #signup {
-    padding: 10px 80px 10px 80px;
-    margin-left: 92px;
-    background-color: white;
+  padding: 10px 80px 10px 80px;
+  margin-left: 92px;
+  background-color: white;
 }
 
 #setup-steps {
-    position: relative;
-    top: -30px;
-    background-color: #363D43;
-    width: 100%;
-    height:1200px;
-    border-radius: 30px;
-    overflow: hidden;
-    box-shadow: 0px 5px 15px #363D43;
+  position: relative;
+  top: -30px;
+  background-color: #363d43;
+  width: 100%;
+  height: 1200px;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0px 5px 15px #363d43;
 }
 
-#setup-steps h2{
-    color: white;
-    position: relative;
-    font-size: 48px;
-    font-weight: 400;
-    left: 180px;
-    top: 40px;
+#setup-steps h2 {
+  color: white;
+  position: relative;
+  font-size: 48px;
+  font-weight: 400;
+  left: 180px;
+  top: 40px;
 }
 
-#setup-steps #enumeration{
-    background-color: #363D43;
-    position: absolute;
-    top: 49px;
-    left: 101px;
-    z-index: 0;
+#setup-steps #enumeration {
+  background-color: #363d43;
+  position: absolute;
+  top: 49px;
+  left: 101px;
+  z-index: 0;
 }
 
 #setup-steps .art {
-    position: absolute;
-    max-width: 60%;
-    right: -120px;
-    top: 40px;
-    opacity: 0%;
-    transition: 1.6s;
+  position: absolute;
+  max-width: 60%;
+  right: -120px;
+  top: 40px;
+  opacity: 0%;
+  transition: 1.6s;
 }
-#setup-steps .art.visible{
-    opacity: 30%;
+#setup-steps .art.visible {
+  opacity: 30%;
 }
 
 #setup-steps .l1 {
-    color: white;
-    position: relative;
-    top: 143px;
-    left: 200px;
-    font-size: 20px;
-    overflow: visible;
+  color: white;
+  position: relative;
+  top: 143px;
+  left: 200px;
+  font-size: 20px;
+  overflow: visible;
 }
 #setup-steps .l1 * {
-    margin-right: 30px;
-    position: relative;
+  margin-right: 30px;
+  position: relative;
 }
 
 #setup-steps .l1 #login {
-    position: relative;
-    right: 12px;
-    text-decoration: underline;
-    padding: 10px 20px 10px 20px;
-    transition: 0.3s;
-    border-radius: 7px;
+  position: relative;
+  right: 12px;
+  text-decoration: underline;
+  padding: 10px 20px 10px 20px;
+  transition: 0.3s;
+  border-radius: 7px;
 }
 #setup-steps .l1 #login:hover {
-    background-color: #FFFFFF30;
-    cursor: pointer;
+  background-color: #ffffff30;
+  cursor: pointer;
 }
 
 #setup-steps a {
-    color: inherit;
+  color: inherit;
 }
 
 #setup-steps .l2 {
-    color: #FFFFFFB2;
-    font-size: 20px;
-    left: 200px;
-    position: relative;
-    left: 200px;
-    top: 260px;
+  color: #ffffffb2;
+  font-size: 20px;
+  left: 200px;
+  position: relative;
+  left: 200px;
+  top: 260px;
 }
 #setup-steps .l3 {
-    color: #FFFFFFB2;
-    font-size: 20px;
-    left: 200px;
-    position: relative;
-    left: 200px;
-    top: 370px;
+  color: #ffffffb2;
+  font-size: 20px;
+  left: 200px;
+  position: relative;
+  left: 200px;
+  top: 370px;
 }
 
-
 #setup-steps .card-container {
-    display: flex;
-    justify-content: center;
-    gap: 100px;
-    position: relative;
-    top: 430px;
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  position: relative;
+  top: 430px;
 }
 
 #setup-steps .card {
-    position: relative;
-    display: inline-block;
-    color: white;
-    background-color: #FFFFFF10;
-    overflow: hidden;
-    width: 498px;
-    height: 427px;
-    border-radius: 10px;
-    padding: 0px;
-    border: solid;
-    border-width: 1px;
-    border-color: white;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    transition: transform 0.3s;
-    box-shadow: 0px 5px 15px #22272a;
-    box-sizing: content-box;
+  position: relative;
+  display: inline-block;
+  color: white;
+  background-color: #ffffff10;
+  overflow: hidden;
+  width: 498px;
+  height: 427px;
+  border-radius: 10px;
+  padding: 0px;
+  border: solid;
+  border-width: 1px;
+  border-color: white;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  transition: transform 0.3s;
+  box-shadow: 0px 5px 15px #22272a;
+  box-sizing: content-box;
 }
 
 #setup-steps .card:hover {
-    transform: scale(1.01);
+  transform: scale(1.01);
 }
-
 
 #setup-steps .card.right:hover {
-    cursor: default;
+  cursor: default;
 }
-#setup-steps .card.right:hover .icon-button{
-    cursor: pointer;
+#setup-steps .card.right:hover .icon-button {
+  cursor: pointer;
 }
 
 #setup-steps .card.left:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 #setup-steps .card a {
-    display: inline-block;
-    opacity: 50%;
-    font-size: 20px;
-    padding: 0px 20px 0px 20px;
-    text-decoration: none;
+  display: inline-block;
+  opacity: 50%;
+  font-size: 20px;
+  padding: 0px 20px 0px 20px;
+  text-decoration: none;
 }
 
 #setup-steps .card h3 {
-    font-size: 36px;
-    font-weight: 400;
-    margin-top: 30px;
-    margin-left: 20px;
+  font-size: 36px;
+  font-weight: 400;
+  margin-top: 30px;
+  margin-left: 20px;
 }
 
 #setup-steps .card .art {
-    position: absolute;
-    top: auto;
-    opacity: 100%;
-    max-width: 100%;
-    right: 0px;
-    bottom: 0px;
-    border-radius: 0px;
+  position: absolute;
+  top: auto;
+  opacity: 100%;
+  max-width: 100%;
+  right: 0px;
+  bottom: 0px;
+  border-radius: 0px;
 }
 
 .icon-button {
-    position: relative;
-    display: inline-block;
-    justify-content: center;
-    top: 11px;
-    margin-top: 32px;
+  position: relative;
+  display: inline-block;
+  justify-content: center;
+  top: 11px;
+  margin-top: 32px;
 }
 
 #demo-section {
-    background-color: #3D646A;
-    padding-top: 50px;
-    padding-bottom: 200px;
+  background-color: #3d646a;
+  padding-top: 50px;
+  padding-bottom: 200px;
 }
 
 #demo-section h1 {
-    color: white;
-    font-weight: 400;
-    font-size: 64px;
-    text-align: center;
-    margin-bottom: 10px;
+  color: white;
+  font-weight: 400;
+  font-size: 64px;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 #demo-section p {
-    text-align: center;
-    color: white;
-    font-size: 18px;
-    margin-bottom: 80px;
+  text-align: center;
+  color: white;
+  font-size: 18px;
+  margin-bottom: 80px;
 }
 
 #demo-section .yt-video {
-    aspect-ratio: 16/9;
-    width: 80%;
-    border: none;
-    margin-left: 10%;
-    box-shadow: 0px 5px 15px #363D43;
+  aspect-ratio: 16/9;
+  width: 80%;
+  border: none;
+  margin-left: 10%;
+  box-shadow: 0px 5px 15px #363d43;
 }

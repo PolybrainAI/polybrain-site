@@ -11,7 +11,7 @@ Polybrain is an AI Powered CAD tool designed to work seamlessly with OnShape, en
 
 ## Installation
 
-This project was created with [create-react-app]([https://github.com/facebook/create-react-app](https://create-react-app.dev/)) and is written in TypeScript. To install and run the project locally, follow these steps:
+This project was created with [create-react-app](<[https://github.com/facebook/create-react-app](https://create-react-app.dev/)>) and is written in TypeScript. To install and run the project locally, follow these steps:
 
 1. Clone this repository.
 2. Navigate to the project directory.
@@ -29,7 +29,6 @@ This project was created with [create-react-app]([https://github.com/facebook/cr
 ## Contribution
 
 Contributions to this project are welcome. Feel free to submit pull requests and raise issues.
-
 
 ## Documentation
 
