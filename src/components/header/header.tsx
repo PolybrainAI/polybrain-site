@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import logo from './../../assets/logo-no-background.svg';
 import './header.css';
-import { getUserInfo, isLoggedIn, API_BASE } from '../../api/api';
+import { getUserInfo, API_BASE } from '../../api/api';
 import { useNavigate } from "react-router-dom";
 
 export default function Header() {
@@ -17,7 +17,8 @@ export default function Header() {
       setLoggedIn((user !== null));
 
       if (user !== null) {
-        setUsername(user.given_name)
+
+        setUsername(user.username)
       }
     }
 

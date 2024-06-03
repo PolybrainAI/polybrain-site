@@ -5,17 +5,15 @@ API Structures are defined here
 */
 
 export interface UserInfo {
-    sub: string,
-    given_name: string,
-    family_name: string|null,
-    nickname: string,
-    name: string,
-    picture: string|null,
-    email: string,
-    locale: string|null,
-    updated_at: string|null,
+  created_at: string
+  email: string
+  name: string
+  nickname: string
+  user_id: string
+  username: string
+  last_ip: string
+  last_login: string
   }
-
 
 export interface UserUploadRequest{
   onshape_access: string|null,

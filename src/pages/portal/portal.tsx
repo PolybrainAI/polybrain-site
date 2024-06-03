@@ -7,17 +7,13 @@ import { v4 as uuidv4 } from 'uuid';
 import Header from "../../components/header/header"
 import "./portal.css"
 import Footer from "../../components/footer/footer";
-import { useNavigate } from "react-router-dom";
-import { logOut, isLoggedIn, getUserInfo, uploadCredentials, getCredentialPreview } from "../../api/api";
-import { UserCredentialPreview } from "../../api/datamodel";
+import { logOut, getUserInfo, uploadCredentials, getCredentialPreview } from "../../api/api";
 
 export default function Portal() {
 
     const ALERT_SHOW_TIME = 5000; // 5s
 
-    const navigate = useNavigate();
     const [username, setUsernmae] = useState("");
-    const [selectedMenu, setSelectedMenu] = useState("main-portal")
     const [alertContents, setAlertContents] = useState("")
     const [alertSeverity, setAlertSeverity] = useState("error")
     var sleep_id = useRef("");
@@ -26,8 +22,6 @@ export default function Portal() {
     const [onshapeSecretKey, setOnshapeSecretKey] = useState('');
     const [openAiApiKey, setOpenAiApiKey] = useState('');
     const [allDevKeysLoaded, setAllDevKeysLoaded] = useState(false);
-
-    const [userCredentialPreview, setUserCredentialPreview] = useState<UserCredentialPreview | null>(null)
 
 
     async function load_default_key_states() {
@@ -86,7 +80,7 @@ export default function Portal() {
                 window.location.href = "http://localhost:3000/";
             }
             else {
-                setUsernmae(user_info.given_name)
+                setUsernmae(user_info.username)
             }
         }
         inner()
@@ -206,7 +200,7 @@ export default function Portal() {
                 </Accordion>
                 <Accordion>
                     <Accordion.Item eventKey="1">
-                        <Accordion.Header><i className={"bi bi-2-circle accordion-title-icon " + (allDevKeysLoaded ? "success-glow" : "")}></i><section className="accordion-title-text" aria-expanded="true">Connect your OnShape and OpenAI Accounts</section></Accordion.Header>
+                        <Accordion.Header><i className={"bi bi-2-circle accordion-title-icon " + (allDevKeysLoaded ? "success-glow" : "")}></i><section className="accordion-title-text">Connect your OnShape and OpenAI Accounts</section></Accordion.Header>
                         <Accordion.Body>
 
                             <h3>OnShape:</h3>
