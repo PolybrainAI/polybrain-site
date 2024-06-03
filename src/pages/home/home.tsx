@@ -73,18 +73,24 @@ export default function Home() {
 
     const glowElements = document.querySelectorAll(".cursor-glow");
 
-    document.addEventListener("mousemove", (ev) => {
 
-      const x = ev.clientX;
-      const y = ev.clientY;
+    function add_glow_tracking(element: HTMLElement) {
       
-      
-      glowElements.forEach((el) => {
-        const element = el as HTMLElement
-        const rect = element.getBoundingClientRect();
+      const rect = element.getBoundingClientRect();
+
+      function mouse_listener(ev){
+        const x = ev.clientX;
+        const y = ev.clientY;   
         element.style.background = `radial-gradient(circle at ${x-rect.left}px ${y-rect.top}px, #FFFFFF14 10%, #FFFFFF10 50%)`;
-      })
+      }
 
+      element.addEventListener('mouseenter', ()=>{element.addEventListener('mousemove', mouse_listener)});
+      element.addEventListener('mouseleave', ()=>{element.removeEventListener('mousemove', mouse_listener); element.style.background="#FFFFFF10"});
+      
+    }
+
+    glowElements.forEach((el) => {
+      add_glow_tracking(el as HTMLElement);
     })
 
   })
