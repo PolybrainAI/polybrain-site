@@ -3,6 +3,8 @@ import React, { useEffect, useRef, useState } from "react";
 import Accordion from "react-bootstrap/Accordion";
 import Alert, { AlertColor } from "@mui/material/Alert";
 import { v4 as uuidv4 } from "uuid";
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
 
 import Header from "../../components/header/header";
 import "./portal.css";
@@ -26,6 +28,8 @@ export default function Portal() {
   const [onshapeSecretKey, setOnshapeSecretKey] = useState("");
   const [openAiApiKey, setOpenAiApiKey] = useState("");
   const [allDevKeysLoaded, setAllDevKeysLoaded] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedMenu, setSelectedMenu] = useState("main-menu-btn")
 
   async function load_default_key_states() {
     const credential_preview = await getCredentialPreview();
@@ -90,24 +94,25 @@ export default function Portal() {
   useEffect(() => {
     const menu_items = document.querySelectorAll(".left > .btn-list-item");
     function menuClickHandle(event: Event) {
-      const selectedElement = event.target;
+      setSelectedMenu((event.target as HTMLElement).id)
 
-      if (selectedElement == null) {
-        console.error(`Unable to extract clicked element from event: ${event}`);
-        return;
-      }
+      // if (selectedElement === null) {
+      //   console.error(`Unable to extract clicked element from event: ${event}`);
+      //   return;
+      // }
 
-      // remove existing classes
-      menu_items.forEach((el) => {
-        (el as HTMLElement).classList.remove("selected");
-      });
+      // // remove existing classes
+      // menu_items.forEach((el) => {
+      //   (el as HTMLElement).classList.remove("selected");
+      // });
 
-      (selectedElement as HTMLElement).classList.add("selected");
+      // (selectedElement as HTMLElement).classList.add("selected");
     }
 
     menu_items.forEach((el) => {
       (el as HTMLElement).addEventListener("click", menuClickHandle);
-    });
+    }
+  );
   }, []);
 
   function triggerAlert(message: string, severity: AlertColor) {
@@ -159,11 +164,11 @@ export default function Portal() {
       <h1>Welcome, {username}</h1>
       <div className="flexbox">
         <div className="left">
-          <button className="btn-list-item selected">
+          <button id="main-menu-btn" className={"btn-list-item " + (selectedMenu === "main-menu-btn" ? "selected" : "")}>
             <i className="bi bi-file-person"></i>
             Main Portal
           </button>
-          <button className="btn-list-item">
+          <button id="more-settings-btn" className={"btn-list-item " + (selectedMenu === "more-settings-btn" ? "selected" : "")}>
             <i className="bi bi-gear"></i>
             More Settings
           </button>
@@ -177,13 +182,27 @@ export default function Portal() {
             Log Out
           </button>
           <button
-            className="btn-list-item"
+            className={"btn-list-item " + (selectedMenu === "delete-account-button" ? "selected" : "")}
             style={{ color: "#E63939", top: "10px" }}
+            id="delete-account-button"
+            onClick={(ev) => {setModalOpen(true)}}
           >
             <i className="bi bi-exclamation-triangle"></i>
             Delete Account
           </button>
         </div>
+        <Popup 
+            open={modalOpen}
+            modal 
+            nested
+            onClose={(ev) => {
+              setModalOpen(false);
+              setSelectedMenu("main-menu-btn")
+            
+            }}
+        >
+          <h1>hi</h1>
+        </Popup>
         <div className="right">
           <p>
             Polybrain needs a little information to get you up and running.
