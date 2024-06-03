@@ -5,13 +5,10 @@ import './home.css';
 import Header from '../../components/header/header'
 import IconButton from '../../components/icon-button/icon-button';
 
-import landingArt from "../../assets/landing-art.png"
-import landingNumbers from "../../assets/landing-numbers.svg"
-import landingStepsArt from "../../assets/landing-steps-art.png"
-import landingCarbonArt from "../../assets/landing-carbon-art.png"
 import kofiLogo from "../../assets/kofi-logo.svg"
 import paypalLogo from "../../assets/paypal-logo.svg"
 import { API_BASE, isLoggedIn } from '../../api/api';
+
 
 export default function Home() {
 
@@ -103,7 +100,7 @@ export default function Home() {
       <Header></Header>
 
       <div id="landing">
-        <img id="landing-art" alt="landing art" src={landingArt} style={{top: (offset < window.innerHeight) ? -offset/4 : -1e4}}/>
+        <img id="landing-art" alt="landing art" src="https://polybrain.b-cdn.net/landing-art.png" style={{top: (offset < window.innerHeight) ? -offset/4 : -1e4}}/>
         <div className='align-center-vert'>
           <div>
 
@@ -118,8 +115,8 @@ export default function Home() {
       </div>
 
       <div id='setup-steps'>
-        <img src={landingNumbers} id="enumeration" alt="" />
-        <img src={landingStepsArt} className="art fade-with-vis" alt=""/>
+        <img src="https://polybrain.b-cdn.net/landing-numbers-art.svg" id="enumeration" alt="" />
+        <img src="https://polybrain.b-cdn.net/landing-steps-art.png" className="art fade-with-vis" alt=""/>
         <h2>Let's get you setup</h2>
 
         <div className='l1 fade-with-vis'>
@@ -136,7 +133,7 @@ export default function Home() {
           <div className='card left cursor-glow' onClick={() => {window.open("https://github.com/PolybrainAI", '_blank')?.focus();}}>
             <h3 className='noselect'>Interesting in Contributing?</h3>
             <a className='noselect'>All of the Polybrain source code is open source and available on GitHub</a>
-            <img alt="" className='art' src={landingCarbonArt} />
+            <img alt="" className='art' src="https://polybrain.b-cdn.net/carbon-landing-art-new.png" />
           </div>
           <div className='card right cursor-glow'>
             <h3 className='noselect'>Sponsor the Project</h3>
@@ -148,7 +145,7 @@ export default function Home() {
 
 
               <IconButton icon={kofiLogo} text="Support me on KoFi" background_color="#FFB3B31A" text_color='white' width='270px' onClick={() => {window.open("https://ko-fi.com/kyletennison", '_blank')?.focus()}} />
-              <IconButton icon={paypalLogo} text="Donate through PayPal" background_color="#B3D6FF1A" text_color='white' width='270px' onClick={() => {window.open("https://donate.kyletennison.com", '_blank')?.focus()}} />
+              <IconButton icon={paypalLogo} text="Donate through PayPal" background_color="#B3D6FF1A" text_color='white' width='270px' onClick={() => {window.open("http://donate.kyletennison.com", '_blank')?.focus()}} />
 
             </div>
 
