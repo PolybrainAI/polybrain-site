@@ -2,12 +2,16 @@
 
 ![alt text](screenshot.png)
 
-Polybrain is an AI Powered CAD tool designed to work seamlessly with OnShape, enabling users to create 3D models. This repository specifically contains the React code for the Polybrain account configuration website. The website can be accessed at [polybrain.xyz](https://polybrain.xyz).
+Polybrain is an AI assistant for OnShape. To use Polybrain, users must first setup an
+account; that is site. Other miscelanious blogs and legal documents are stored here as 
+well. This website can be accessed at [polybrain.xyz](https://polybrain.xyz).
 
 ## Features
 
+On this site,
+
 - Users can add their OnShape Developer tokens (Access token and Secret token) and their OpenAI token to their Polybrain account.
-- These tokens are used by the Polybrain server to communicate with OnShape and OpenAI.
+- Visitors can view supporting documents, make donations, and view legal agreements.
 
 ## Installation
 
@@ -25,6 +29,8 @@ This project was created with [create-react-app](<[https://github.com/facebook/c
   - **assets/**: Stores assets for specific pages.
   - **components/**: Defines React components and their supporting CSS.
   - **pages/**: Contains individual pages, each nested in its own subdirectory. For example, the home page can be found at `src/pages/home/home.jsx`.
+
+> As many assets as possible are served with a [bunny.net](https://bunny.net/) CDN; email kyletennison05@gmail.com for information on managing this CDN.
 
 ## Contribution
 
