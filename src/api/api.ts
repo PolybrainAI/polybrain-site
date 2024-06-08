@@ -33,14 +33,6 @@ function getCookie(name: string): string | null {
 }
 
 /**
- * Erases a cookie from the browser
- * @param name The name of the cookie
- */
-function eraseCookie(name: string) {
-  document.cookie = name + "=; Max-Age=0";
-}
-
-/**
  * Checks if a user is logged in
  * @returns true if the user is logged in, false otherwise
  */
@@ -163,7 +155,6 @@ export async function logOut(): Promise<boolean> {
     return false;
   }
 
-  eraseCookie("polybrain-session");
   window.location.replace(`${API_BASE}auth0/logout`);
 
   return true;

@@ -143,3 +143,71 @@
 #portal-page .success-glow {
   filter: drop-shadow(0px 0px 1px #19e715);
 }
+
+#delete-popup {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+#delete-popup h2 {
+  color: #E63939;
+  margin-bottom: 40px;
+}
+#delete-popup p {
+  margin-bottom: 40px;
+  font-weight: 400;
+}
+
+#delete-popup input {
+  width: 80%;
+  display: block;
+  padding-left: 20px;
+  padding-bottom: 5px;
+  border-radius: 7px;
+  align-self: center;
+  border: 1px solid #363d43;
+  height: 50px;
+}
+
+#delete-popup .btn-container {
+  margin-top: 30px;
+  display: flex;
+  justify-content: end;
+  gap: 20px
+}
+
+#delete-popup button {
+  align-self: flex-start;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 7px;
+  padding: 10px;
+  transition: 0.3s;
+}
+
+#delete-popup button.cancel {
+  transition: 0.3s;
+}
+#delete-popup button.cancel:hover {
+  background-color: #0000000a;
+}
+
+#delete-popup button.delete {
+  padding-right: 33px;
+  padding-left: 33px;
+  color: white;
+  font-weight: 500;
+  background-color: #E63939;
+}
+
+
+#delete-popup button.delete:enabled:hover {
+  color: #E63939;
+  background-color: white;
+  border-color: #363d43;
+}
+#delete-popup button.delete:disabled {
+  opacity: 60%;
+  cursor: not-allowed;
+}
