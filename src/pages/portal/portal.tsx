@@ -1,3 +1,8 @@
+/*
+
+Entry point to the user portal
+
+*/
 import React, { useEffect, useRef, useState } from "react";
 
 import Accordion from "react-bootstrap/Accordion";

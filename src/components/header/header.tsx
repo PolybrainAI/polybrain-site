@@ -1,3 +1,8 @@
+/*
+
+Header for all Polybrain pages
+
+*/
 import React, { useEffect, useState } from "react";
 import logo from "./../../assets/logo-no-background.svg";
 import "./header.css";

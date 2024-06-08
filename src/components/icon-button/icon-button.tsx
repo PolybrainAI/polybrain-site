@@ -1,5 +1,9 @@
-import React from "react";
+/*
 
+Utility component to add an icon to a button
+
+*/
+import React from "react";
 import "./icon-button.css";
 
 type CallbackFunctionVariadic = (...args: any[]) => void;
@@ -18,7 +22,7 @@ export default function IconButton(props: {
       style={{ backgroundColor: props.background_color, width: props.width }}
       onClick={props.onClick}
     >
-      <img className="icon" src={props.icon} />
+      <img className="icon" alt="" src={props.icon} />
       <a className="icon-text" style={{ color: props.text_color }}>
         {props.text}
       </a>
