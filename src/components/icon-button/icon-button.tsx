@@ -23,9 +23,9 @@ export default function IconButton(props: {
       onClick={props.onClick}
     >
       <img className="icon" alt="" src={props.icon} />
-      <a className="icon-text" style={{ color: props.text_color }}>
+      <p className="icon-text" style={{ color: props.text_color }}>
         {props.text}
-      </a>
+      </p>
     </div>
   );
 }
