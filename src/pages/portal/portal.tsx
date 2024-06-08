@@ -14,6 +14,7 @@ import {
   getUserInfo,
   uploadCredentials,
   getCredentialPreview,
+  API_BASE,
 } from "../../api/api";
 
 export default function Portal() {
@@ -211,7 +212,13 @@ export default function Portal() {
             <input placeholder={userEmail} value={deleteCheckText}  onChange={(ev) => {setDeleteCheckTest(ev.target.value)}} type="text"/>
             <div className="btn-container">
               <button className="cancel" onClick={(ev)=>{setModalOpen(false); setSelectedMenu("main-menu-btn")}}>Cancel</button>
-              <button className="delete" disabled={(userEmail !== deleteCheckText)}>Delete</button>
+              <button className="delete" disabled={(userEmail !== deleteCheckText)} onClick={ () => {
+                if (userEmail === deleteCheckText){
+                  window.location.href = `${API_BASE}user/delete-self`
+                }
+              }
+                
+              }>Delete</button>
             </div>
 
           </div>
