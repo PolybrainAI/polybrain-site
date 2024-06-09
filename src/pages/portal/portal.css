@@ -52,6 +52,11 @@
   background-color: #363d430a;
   cursor: pointer;
 }
+#portal-page .left .btn-list-item:disabled {
+  opacity: 50%;
+  cursor: default;
+  background-color: transparent;
+}
 #portal-page .left .btn-list-item.selected {
   background-color: #363d431a;
 }
