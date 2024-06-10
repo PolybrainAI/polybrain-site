@@ -10,8 +10,18 @@ import {
   UserUploadRequest,
 } from "./datamodel";
 
-// export const API_BASE = "http://polybrain.xyz/";
-export const API_BASE = "http://localhost:8000/";
+export const stage = process.env.REACT_APP_STAGE;
+
+export const get_api_base = () => {
+  if (stage==="PROD"){
+    return "http://polybrain.xyz/";
+  }
+  else {
+    console.warn("Running DEV")
+    return "http://localhost:8000/";
+  }
+}
+
 
 window.user_info = null;
 window.last_updated = new Date();
@@ -54,7 +64,7 @@ export async function getUserInfo(): Promise<UserInfo | null> {
       console.debug("no JWT found");
       return null;
     } else {
-      const user_response = await fetch(`${API_BASE}auth0/user-data`, {
+      const user_response = await fetch(`${get_api_base()}auth0/user-data`, {
         method: "GET",
         credentials: "include",
       });
@@ -74,7 +84,7 @@ export async function getUserInfo(): Promise<UserInfo | null> {
 }
 
 export async function getCredentialPreview(): Promise<UserCredentialPreview | null> {
-  const response = await fetch(`${API_BASE}credentials/preview`, {
+  const response = await fetch(`${get_api_base()}credentials/preview`, {
     method: "GET",
     credentials: "include",
   });
@@ -118,7 +128,7 @@ export async function uploadCredentials(
     credentials.openai_api = null;
   }
 
-  const response = await fetch(`${API_BASE}credentials/upload`, {
+  const response = await fetch(`${get_api_base()}credentials/upload`, {
     method: "POST",
     credentials: "include",
     mode: "cors",
@@ -154,7 +164,7 @@ export async function logOut(): Promise<boolean> {
     return false;
   }
 
-  window.location.replace(`${API_BASE}auth0/logout`);
+  window.location.replace(`${get_api_base()}auth0/logout`);
 
   return true;
 }

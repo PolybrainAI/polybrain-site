@@ -6,7 +6,7 @@ Header for all Polybrain pages
 import React, { useEffect, useState } from "react";
 import logo from "./../../assets/logo-no-background.svg";
 import "./header.css";
-import { getUserInfo, API_BASE } from "../../api/api";
+import { getUserInfo, get_api_base } from "../../api/api";
 import { useNavigate } from "react-router-dom";
 
 export default function Header() {
@@ -57,7 +57,7 @@ export default function Header() {
         <a
           className="header-link"
           id="login"
-          href={`${API_BASE}auth0/login`}
+          href={`${get_api_base()}auth0/login`}
           style={{ display: loggedIn ? "none" : "block" }}
         >
           Log In
@@ -65,7 +65,7 @@ export default function Header() {
         <a
           className="header-link"
           id="signup"
-          href={`${API_BASE}auth0/login`}
+          href={`${get_api_base()}auth0/login`}
           style={{ display: loggedIn ? "none" : "block" }}
         >
           Sign Up

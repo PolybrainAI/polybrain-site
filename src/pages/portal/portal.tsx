@@ -13,7 +13,7 @@ import "reactjs-popup/dist/index.css";
 import Header from "../../components/header/header";
 import "./portal.css";
 import Footer from "../../components/footer/footer";
-import { getUserInfo, API_BASE } from "../../api/api";
+import { getUserInfo, get_api_base } from "../../api/api";
 
 import MainPortalSection from "./main-portal-section";
 import PortalTree from "./portal-tree";
@@ -162,7 +162,7 @@ export default function Portal() {
               disabled={userEmail !== deleteCheckText}
               onClick={() => {
                 if (userEmail === deleteCheckText) {
-                  window.location.href = `${API_BASE}user/delete-self`;
+                  window.location.href = `${get_api_base()}user/delete-self`;
                 }
               }}
             >

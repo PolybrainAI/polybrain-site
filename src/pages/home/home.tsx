@@ -12,7 +12,7 @@ import IconButton from "../../components/icon-button/icon-button";
 
 import kofiLogo from "../../assets/kofi-logo.svg";
 import paypalLogo from "../../assets/paypal-logo.svg";
-import { API_BASE, isLoggedIn } from "../../api/api";
+import { get_api_base, isLoggedIn } from "../../api/api";
 
 export default function Home() {
   const [offset, setOffset] = useState(0);
@@ -98,7 +98,7 @@ export default function Home() {
   });
 
   function redirectToLogin() {
-    window.location.href = `${API_BASE}auth0/login`;
+    window.location.href = `${get_api_base()}auth0/login`;
   }
 
   return (
@@ -156,7 +156,7 @@ export default function Home() {
             Create Account
           </button>
           <a>or</a>
-          <a id="login" href={`${API_BASE}auth0/login`}>
+          <a id="login" href={`${get_api_base()}auth0/login`}>
             Log In
           </a>
         </div>
