@@ -146,6 +146,7 @@ export default function Home() {
         <img
           src="https://polybrain.b-cdn.net/landing-steps-art.png"
           className="art fade-with-vis"
+          id="landing-steps-art"
           alt=""
         />
         <h2>Let's get you setup</h2>

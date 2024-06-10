@@ -269,7 +269,7 @@ button {
 
 
 @media (max-width: 950px){
-  #setup-steps .art{
+  #setup-steps #landing-steps-art{
     display: none;
   }
 }
