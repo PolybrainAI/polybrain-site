@@ -25,6 +25,7 @@ import PortalTree from "./portal-tree";
 
 export default function Portal() {
   const ALERT_SHOW_TIME = 5000; // 5s
+  const MOBILE_SIZE_THRESHOLD = 870; // px
 
   const [username, setUsername] = useState("");
   const [userEmail, setUserEmail] = useState("");
@@ -52,6 +53,23 @@ export default function Portal() {
     }
     inner();
   }, []);
+
+  // Warning for mobile users
+  useEffect(() => {
+
+    const handle_resize = () => {
+      if (window.innerWidth < MOBILE_SIZE_THRESHOLD) {
+        alert("Use a computer to setup Polybrain. Mobile is not yet supported.")
+      }
+    }
+
+    window.addEventListener('resize', () => {
+      handle_resize();
+    });
+
+    handle_resize() // run on load
+
+  }, [])
 
   // Click handler for menu items
   useEffect(() => {

@@ -9,10 +9,10 @@ import Accordion from "react-bootstrap/Accordion";
 import {
     uploadCredentials,
     getCredentialPreview,
-  } from "../../api/api";
+} from "../../api/api";
 
 type AlertFunction = (message: string) => void;
-export default function MainPortalSection(props: {alertError: AlertFunction, alertInfo: AlertFunction, alertSuccess: AlertFunction}) {
+export default function MainPortalSection(props: { alertError: AlertFunction, alertInfo: AlertFunction, alertSuccess: AlertFunction }) {
 
     const [allDevKeysLoaded, setAllDevKeysLoaded] = useState(false);
     const [onshapeAccessKey, setOnshapeAccessKey] = useState("");
@@ -23,45 +23,45 @@ export default function MainPortalSection(props: {alertError: AlertFunction, ale
     async function load_default_key_states() {
         const credential_preview = await getCredentialPreview();
         if (credential_preview === null) {
-          return;
+            return;
         } else {
-          if (credential_preview.has_onshape_access) {
-            setOnshapeAccessKey("0".repeat(24));
-          } else {
-            setOnshapeAccessKey("");
-          }
-          if (credential_preview.has_onshape_secret) {
-            setOnshapeSecretKey("0".repeat(48));
-          } else {
-            setOnshapeSecretKey("");
-          }
-          if (credential_preview.has_openai_api) {
-            setOpenAiApiKey("0".repeat(51));
-          } else {
-            setOpenAiApiKey("");
-          }
+            if (credential_preview.has_onshape_access) {
+                setOnshapeAccessKey("0".repeat(24));
+            } else {
+                setOnshapeAccessKey("");
+            }
+            if (credential_preview.has_onshape_secret) {
+                setOnshapeSecretKey("0".repeat(48));
+            } else {
+                setOnshapeSecretKey("");
+            }
+            if (credential_preview.has_openai_api) {
+                setOpenAiApiKey("0".repeat(51));
+            } else {
+                setOpenAiApiKey("");
+            }
         }
-      }
-      async function checkAllDevKeysLoaded(): Promise<null> {
+    }
+    async function checkAllDevKeysLoaded(): Promise<null> {
         const credential_preview = await getCredentialPreview();
         if (credential_preview === null) {
-          setAllDevKeysLoaded(false);
+            setAllDevKeysLoaded(false);
         } else {
-          setAllDevKeysLoaded(
-            credential_preview.has_onshape_access &&
-              credential_preview.has_onshape_secret &&
-              credential_preview.has_openai_api,
-          );
+            setAllDevKeysLoaded(
+                credential_preview.has_onshape_access &&
+                credential_preview.has_onshape_secret &&
+                credential_preview.has_openai_api,
+            );
         }
         return null;
-      }
-    
-      // Load user credential preview
-      useEffect(() => {
+    }
+
+    // Load user credential preview
+    useEffect(() => {
         load_default_key_states(); // load placeholder values in inputs
-    
+
         checkAllDevKeysLoaded();
-      }, []);
+    }, []);
 
     return <>
         <p>
@@ -111,70 +111,72 @@ export default function MainPortalSection(props: {alertError: AlertFunction, ale
                         developer keys, available at dev-portal.onshape.com/keys.
                     </p>
 
-                    <div className="flexbox">
-                        <div className="accordion-section-left">
-                            <label>
-                                <p>Access Key</p>
-                                <input
-                                    className="text-input secret"
-                                    placeholder="Paste your access key here"
-                                    type="password"
-                                    value={onshapeAccessKey}
-                                    onChange={(e) => setOnshapeAccessKey(e.target.value)}
-                                />
-                            </label>
-                            <label>
-                                <p>Secret Key</p>
-                                <input
-                                    className="text-input secret"
-                                    placeholder="Paste your access key here"
-                                    type="password"
-                                    value={onshapeSecretKey}
-                                    onChange={(e) => setOnshapeSecretKey(e.target.value)}
-                                />
-                            </label>
-                            <div>
-                                <button
-                                    className="btn-fill dark save"
-                                    id="save-onshape-input"
-                                    onClick={(ev) => {
-                                        uploadCredentials(
-                                            {
-                                                onshape_access: onshapeAccessKey,
-                                                onshape_secret: onshapeSecretKey,
-                                                openai_api: null,
-                                            },
-                                            props.alertError,
-                                            props.alertSuccess,
-                                        );
-                                        setTimeout(() => {
-                                            checkAllDevKeysLoaded();
-                                        }, 2000);
-                                    }}
-                                >
-                                    Save
-                                </button>
-                                <button
-                                    className="btn-trace dark cancel"
-                                    id="cancel-onshape-input"
-                                    onClick={(ev) => {
-                                        load_default_key_states();
-                                        props.alertInfo("Reset OnShape keys to original state");
-                                    }}
-                                >
-                                    Cancel
-                                </button>
+                    <div className="outer-iv-container">
+                        <div className="flexbox input-video-container">
+                            <div className="accordion-section-left">
+                                <label>
+                                    <p>Access Key</p>
+                                    <input
+                                        className="text-input secret"
+                                        placeholder="Paste your access key here"
+                                        type="password"
+                                        value={onshapeAccessKey}
+                                        onChange={(e) => setOnshapeAccessKey(e.target.value)}
+                                    />
+                                </label>
+                                <label>
+                                    <p>Secret Key</p>
+                                    <input
+                                        className="text-input secret"
+                                        placeholder="Paste your access key here"
+                                        type="password"
+                                        value={onshapeSecretKey}
+                                        onChange={(e) => setOnshapeSecretKey(e.target.value)}
+                                    />
+                                </label>
+                                <div className="center-contents-horiz">
+                                    <button
+                                        className="btn-fill dark save"
+                                        id="save-onshape-input"
+                                        onClick={(ev) => {
+                                            uploadCredentials(
+                                                {
+                                                    onshape_access: onshapeAccessKey,
+                                                    onshape_secret: onshapeSecretKey,
+                                                    openai_api: null,
+                                                },
+                                                props.alertError,
+                                                props.alertSuccess,
+                                            );
+                                            setTimeout(() => {
+                                                checkAllDevKeysLoaded();
+                                            }, 2000);
+                                        }}
+                                    >
+                                        Save
+                                    </button>
+                                    <button
+                                        className="btn-trace dark cancel"
+                                        id="cancel-onshape-input"
+                                        onClick={(ev) => {
+                                            load_default_key_states();
+                                            props.alertInfo("Reset OnShape keys to original state");
+                                        }}
+                                    >
+                                        Cancel
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                        <div className="accordion-section-right ">
-                            <div>
-                                <iframe
-                                    src="https://www.youtube.com/embed/NpEaa2P7qZI?si=HMnP10Q78w7sKQWz"
-                                    title="YouTube video player"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    referrerPolicy="strict-origin-when-cross-origin"
-                                    allowFullScreen
-                                ></iframe>
+                            <div className="accordion-section-right ">
+                                <div>
+                                    <iframe
+                                        src="https://www.youtube.com/embed/NpEaa2P7qZI?si=HMnP10Q78w7sKQWz"
+                                        title="YouTube video player"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerPolicy="strict-origin-when-cross-origin"
+                                        allowFullScreen
+                                    ></iframe>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -195,61 +197,63 @@ export default function MainPortalSection(props: {alertError: AlertFunction, ale
                         .
                     </p>
 
-                    <div className="flexbox">
-                        <div className="accordion-section-left">
-                            <label id="openai-api-key-label">
-                                <p>API Key</p>
-                                <input
-                                    id="openai-api-key"
-                                    className="text-input secret"
-                                    placeholder="Paste your OpenAI API key here"
-                                    type="password"
-                                    value={openAiApiKey}
-                                    onChange={(e) => setOpenAiApiKey(e.target.value)}
-                                />
-                            </label>
-                            <div>
-                                <button
-                                    className="btn-fill dark save"
-                                    id="save-openai-input"
-                                    onClick={(ev) => {
-                                        uploadCredentials(
-                                            {
-                                                onshape_access: null,
-                                                onshape_secret: null,
-                                                openai_api: openAiApiKey,
-                                            },
-                                            props.alertError,
-                                            props.alertSuccess,
-                                        );
-                                        setTimeout(() => {
-                                            checkAllDevKeysLoaded();
-                                        }, 2000);
-                                    }}
-                                >
-                                    Save
-                                </button>
-                                <button
-                                    className="btn-trace dark cancel"
-                                    id="cancel-openai-input"
-                                    onClick={(ev) => {
-                                        load_default_key_states();
-                                        props.alertInfo("Reset OpenAI key to original state");
-                                    }}
-                                >
-                                    Cancel
-                                </button>
+                    <div className="outer-iv-container">
+                        <div className="flexbox input-video-container">
+                            <div className="accordion-section-left">
+                                <label id="openai-api-key-label">
+                                    <p>API Key</p>
+                                    <input
+                                        id="openai-api-key"
+                                        className="text-input secret"
+                                        placeholder="Paste your OpenAI API key here"
+                                        type="password"
+                                        value={openAiApiKey}
+                                        onChange={(e) => setOpenAiApiKey(e.target.value)}
+                                    />
+                                </label>
+                                <div className="center-contents-horiz">
+                                    <button
+                                        className="btn-fill dark save"
+                                        id="save-openai-input"
+                                        onClick={(ev) => {
+                                            uploadCredentials(
+                                                {
+                                                    onshape_access: null,
+                                                    onshape_secret: null,
+                                                    openai_api: openAiApiKey,
+                                                },
+                                                props.alertError,
+                                                props.alertSuccess,
+                                            );
+                                            setTimeout(() => {
+                                                checkAllDevKeysLoaded();
+                                            }, 2000);
+                                        }}
+                                    >
+                                        Save
+                                    </button>
+                                    <button
+                                        className="btn-trace dark cancel"
+                                        id="cancel-openai-input"
+                                        onClick={(ev) => {
+                                            load_default_key_states();
+                                            props.alertInfo("Reset OpenAI key to original state");
+                                        }}
+                                    >
+                                        Cancel
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                        <div className="accordion-section-right ">
-                            <div>
-                                <iframe
-                                    src="https://www.youtube.com/embed/NpEaa2P7qZI?si=HMnP10Q78w7sKQWz"
-                                    title="YouTube video player"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    referrerPolicy="strict-origin-when-cross-origin"
-                                    allowFullScreen
-                                ></iframe>
+                            <div className="accordion-section-right ">
+                                <div>
+                                    <iframe
+                                        src="https://www.youtube.com/embed/NpEaa2P7qZI?si=HMnP10Q78w7sKQWz"
+                                        title="YouTube video player"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerPolicy="strict-origin-when-cross-origin"
+                                        allowFullScreen
+                                    ></iframe>
+                                </div>
                             </div>
                         </div>
                     </div>
