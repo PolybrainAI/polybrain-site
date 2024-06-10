@@ -13,15 +13,13 @@ import {
 export const stage = process.env.REACT_APP_STAGE;
 
 export const get_api_base = () => {
-  if (stage==="PROD"){
+  if (stage === "PROD") {
     return "https://polybrain.xyz/";
-  }
-  else {
-    console.warn("Running DEV")
+  } else {
+    console.warn("Running DEV");
     return "http://localhost:8000/";
   }
-}
-
+};
 
 window.user_info = null;
 window.last_updated = new Date();

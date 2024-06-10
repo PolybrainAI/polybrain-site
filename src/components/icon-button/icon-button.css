@@ -1,4 +1,4 @@
-.icon-button {
+.icon-btn {
   position: relative;
   display: flex;
   align-items: baseline;
@@ -13,11 +13,11 @@
   transition: transform 0.3s;
 }
 
-.icon-button:hover {
+.icon-btn:hover {
   transform: scale(1.02);
 }
 
-.icon-button .icon-text {
+.icon-btn .icon-text {
   position: relative;
   display: inline;
   font-size: 15px !important;
@@ -28,7 +28,7 @@
   padding: 0px 10px 0px 10px;
 }
 
-.icon-button .icon {
+.icon-btn .icon {
   position: relative;
   height: 29px;
   top: 7px;
