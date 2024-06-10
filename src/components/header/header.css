@@ -35,6 +35,12 @@
   text-decoration: none;
 }
 
+@media (max-width: 880px){
+  #header .exclude-mobile{
+    display: none !important;
+  }
+}
+
 #header .header-link:hover {
   background-color: #ffffff30;
   cursor: pointer;
