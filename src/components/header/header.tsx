@@ -1,3 +1,8 @@
+/*
+
+Header for all Polybrain pages
+
+*/
 import React, { useEffect, useState } from "react";
 import logo from "./../../assets/logo-no-background.svg";
 import "./header.css";
@@ -30,9 +35,24 @@ export default function Header() {
           Polybrain
         </a>
 
-        <a className="header-link">Contribute</a>
-        <a className="header-link">Pricing</a>
-        <a className="header-link">FAQ</a>
+        <a
+          className="header-link exclude-mobile"
+          href="https://polybrain.xyz/contributing"
+        >
+          Contribute
+        </a>
+        <a
+          className="header-link exclude-mobile"
+          href="https://polybrain.xyz/pricing"
+        >
+          Pricing
+        </a>
+        <a
+          className="header-link exclude-mobile"
+          href="https://polybrain.xyz/faq"
+        >
+          FAQ
+        </a>
 
         <a
           className="header-link"

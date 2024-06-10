@@ -1,3 +1,9 @@
+/*
+
+API Utility functions. Helps interface with the Polybrain server
+
+*/
+
 import {
   UserCredentialPreview,
   UserInfo,
@@ -83,20 +89,6 @@ export async function getCredentialPreview(): Promise<UserCredentialPreview | nu
 }
 
 /**
- * Logs out of the current user
- */
-export async function logOut(): Promise<boolean> {
-  if (!(await isLoggedIn())) {
-    console.error("Cannot log out; the user is not logged in");
-    return false;
-  }
-
-  window.location.replace(`${API_BASE}auth0/logout`);
-
-  return true;
-}
-
-/**
  * Uploads credentials to the server
  * @param credentials The credentials to upload
  */
@@ -151,4 +143,18 @@ export async function uploadCredentials(
   }
 
   return response_json;
+}
+
+/**
+ * Logs out of the current user
+ */
+export async function logOut(): Promise<boolean> {
+  if (!(await isLoggedIn())) {
+    console.error("Cannot log out; the user is not logged in");
+    return false;
+  }
+
+  window.location.replace(`${API_BASE}auth0/logout`);
+
+  return true;
 }

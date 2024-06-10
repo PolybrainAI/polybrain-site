@@ -5,6 +5,7 @@
 
 body {
   margin: 0;
+  min-width: 562px;
   font-family: "Roboto Flex", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
     "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -107,6 +108,11 @@ code {
   display: flex;
 }
 
+.center-contents-horiz {
+  display: flex;
+  justify-content: center;
+}
+
 .text-input {
   padding: 10px;
   border-radius: 7px;
@@ -131,6 +137,7 @@ iframe {
   border-radius: 10px;
   padding: 10px !important;
   background-color: white;
+  animation: anvil 0.3s cubic-bezier(0.38, 0.1, 0.36, 0.9) forwards;
   -webkit-animation: anvil 0.3s cubic-bezier(0.38, 0.1, 0.36, 0.9) forwards;
   max-width: 570px;
 }
