@@ -108,7 +108,7 @@ code {
   display: flex;
 }
 
-.center-contents-horiz{
+.center-contents-horiz {
   display: flex;
   justify-content: center;
 }

@@ -126,7 +126,7 @@
   margin-top: 30px;
   margin-bottom: 30px;
 }
-#portal-page .outer-iv-container{
+#portal-page .outer-iv-container {
   display: flex;
   justify-content: left;
 }
@@ -135,25 +135,24 @@
   width: 100%;
 }
 
-#portal-page .input-video-container{
+#portal-page .input-video-container {
   gap: 50px;
 }
 
-@media (max-width: 1230px){
-  #portal-page .input-video-container{
+@media (max-width: 1230px) {
+  #portal-page .input-video-container {
     flex-direction: column;
   }
-  #portal-page .outer-iv-container{
+  #portal-page .outer-iv-container {
     justify-content: center;
   }
-  #portal-page .right .accordion-section-left{
+  #portal-page .right .accordion-section-left {
     width: 100%;
   }
-  #portal-page .right .accordion-section-right{
+  #portal-page .right .accordion-section-right {
     width: 100%;
   }
 }
-
 
 #portal-page .right h3 {
   font-size: 20px;
@@ -184,7 +183,7 @@
 }
 
 #delete-popup h2 {
-  color: #E63939;
+  color: #e63939;
   margin-bottom: 40px;
 }
 #delete-popup p {
@@ -207,7 +206,7 @@
   margin-top: 30px;
   display: flex;
   justify-content: end;
-  gap: 20px
+  gap: 20px;
 }
 
 #delete-popup button {
@@ -231,12 +230,11 @@
   padding-left: 33px;
   color: white;
   font-weight: 500;
-  background-color: #E63939;
+  background-color: #e63939;
 }
 
-
 #delete-popup button.delete:enabled:hover {
-  color: #E63939;
+  color: #e63939;
   background-color: white;
   border-color: #363d43;
 }

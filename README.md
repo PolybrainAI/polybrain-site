@@ -3,7 +3,7 @@
 ![alt text](screenshot.png)
 
 Polybrain is an AI assistant for OnShape. To use Polybrain, users must first setup an
-account; that is site. Other miscelanious blogs and legal documents are stored here as 
+account; that is site. Other miscelanious blogs and legal documents are stored here as
 well. This website can be accessed at [polybrain.xyz](https://polybrain.xyz).
 
 ## Features

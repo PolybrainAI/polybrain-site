@@ -35,8 +35,8 @@
   text-decoration: none;
 }
 
-@media (max-width: 880px){
-  #header .exclude-mobile{
+@media (max-width: 880px) {
+  #header .exclude-mobile {
     display: none !important;
   }
 }

@@ -44,8 +44,7 @@ button {
   z-index: 10;
 }
 
-
-#landing .btn-container{
+#landing .btn-container {
   margin-top: 30px;
   margin-left: 92px;
 }
@@ -70,10 +69,8 @@ button {
   background-color: white;
 }
 
-
 /* Mobile settings for front landing section */
-@media (max-width: 950px){
-
+@media (max-width: 950px) {
   #landing-interface {
     width: 100%;
     text-align: center;
@@ -82,7 +79,7 @@ button {
     align-items: center;
   }
 
-  #landing h1{
+  #landing h1 {
     margin: 0;
     width: 80%;
     font-size: 80px;
@@ -93,13 +90,12 @@ button {
     margin-left: 0px;
   }
 
-  #landing img{
+  #landing img {
     max-width: 100%;
     height: 100vh;
     filter: blur(4px);
   }
 }
-
 
 #setup-steps {
   position: relative;
@@ -258,23 +254,22 @@ button {
 
 /* Mobile resize for setup steps section */
 
-@media (max-width: 1251px){
+@media (max-width: 1251px) {
   #setup-steps {
     height: 1800px;
   }
-  #setup-steps .card-container{
+  #setup-steps .card-container {
     flex-direction: column;
   }
 }
 
-
-@media (max-width: 950px){
-  #setup-steps #landing-steps-art{
+@media (max-width: 950px) {
+  #setup-steps #landing-steps-art {
     display: none;
   }
 }
 
-@media (max-width: 690px){
+@media (max-width: 690px) {
   #setup-steps #enumeration {
     left: 30px;
   }
@@ -291,9 +286,6 @@ button {
     left: 109px;
   }
 }
-
-
-
 
 .icon-button {
   position: relative;

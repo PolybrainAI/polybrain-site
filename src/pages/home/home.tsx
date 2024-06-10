@@ -35,7 +35,7 @@ export default function Home() {
       // flip body color depending on location
       if (
         (window.scrollY - FLIP_DISTANCE) *
-        (last_offset.current - FLIP_DISTANCE) <
+          (last_offset.current - FLIP_DISTANCE) <
         1
       ) {
         document.body.style.backgroundColor =
@@ -78,8 +78,9 @@ export default function Home() {
       function mouse_listener(ev) {
         const x = ev.clientX;
         const y = ev.clientY;
-        element.style.background = `radial-gradient(circle at ${x - rect.left
-          }px ${y - rect.top}px, #FFFFFF14 10%, #FFFFFF10 50%)`;
+        element.style.background = `radial-gradient(circle at ${
+          x - rect.left
+        }px ${y - rect.top}px, #FFFFFF14 10%, #FFFFFF10 50%)`;
       }
 
       element.addEventListener("mouseenter", () => {
@@ -116,7 +117,6 @@ export default function Home() {
             <h1>Building Parametric CAD with AI</h1>
 
             <div className="btn-container">
-
               <button
                 className="btn-fill btn-glow"
                 id="signup"
@@ -181,12 +181,13 @@ export default function Home() {
         </p>
 
         <div className="center-contents-horiz">
-
           <div className="card-container">
             <div
               className="card left cursor-glow"
               onClick={() => {
-                window.open("https://github.com/PolybrainAI", "_blank")?.focus();
+                window
+                  .open("https://github.com/PolybrainAI", "_blank")
+                  ?.focus();
               }}
             >
               <h3 className="noselect">Interesting in Contributing?</h3>
@@ -204,7 +205,8 @@ export default function Home() {
               <h3 className="noselect">Sponsor the Project</h3>
               <a className="noselect">
                 Polybrain is an independent, self funded project. Leave a tip to
-                the creator if you feel so kind. Anything is greatly appreciated!
+                the creator if you feel so kind. Anything is greatly
+                appreciated!
               </a>
 
               <div className="flex-center-vert">
