@@ -5,6 +5,7 @@
 
 body {
   margin: 0;
+  min-width: 562px;
   font-family: "Roboto Flex", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
     "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -105,6 +106,11 @@ code {
 
 .flexbox {
   display: flex;
+}
+
+.center-contents-horiz{
+  display: flex;
+  justify-content: center;
 }
 
 .text-input {

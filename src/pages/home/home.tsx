@@ -35,7 +35,7 @@ export default function Home() {
       // flip body color depending on location
       if (
         (window.scrollY - FLIP_DISTANCE) *
-          (last_offset.current - FLIP_DISTANCE) <
+        (last_offset.current - FLIP_DISTANCE) <
         1
       ) {
         document.body.style.backgroundColor =
@@ -78,9 +78,8 @@ export default function Home() {
       function mouse_listener(ev) {
         const x = ev.clientX;
         const y = ev.clientY;
-        element.style.background = `radial-gradient(circle at ${
-          x - rect.left
-        }px ${y - rect.top}px, #FFFFFF14 10%, #FFFFFF10 50%)`;
+        element.style.background = `radial-gradient(circle at ${x - rect.left
+          }px ${y - rect.top}px, #FFFFFF14 10%, #FFFFFF10 50%)`;
       }
 
       element.addEventListener("mouseenter", () => {
@@ -113,24 +112,27 @@ export default function Home() {
           style={{ top: offset < window.innerHeight ? -offset / 4 : -1e4 }}
         />
         <div className="align-center-vert">
-          <div>
+          <div id="landing-interface">
             <h1>Building Parametric CAD with AI</h1>
 
-            <button
-              className="btn-fill btn-glow"
-              id="signup"
-              onClick={redirectToLogin}
-            >
-              Get Started
-            </button>
-            <button
-              className="btn-trace"
-              id="login"
-              onClick={redirectToLogin}
-              style={{ display: loggedIn ? "none" : "inline-block" }}
-            >
-              Log In
-            </button>
+            <div className="btn-container">
+
+              <button
+                className="btn-fill btn-glow"
+                id="signup"
+                onClick={redirectToLogin}
+              >
+                Get Started
+              </button>
+              <button
+                className="btn-trace"
+                id="login"
+                onClick={redirectToLogin}
+                style={{ display: loggedIn ? "none" : "inline-block" }}
+              >
+                Log In
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -177,56 +179,59 @@ export default function Home() {
           Install the <a target="_blank">Chrome Plugin</a>
         </p>
 
-        <div className="card-container">
-          <div
-            className="card left cursor-glow"
-            onClick={() => {
-              window.open("https://github.com/PolybrainAI", "_blank")?.focus();
-            }}
-          >
-            <h3 className="noselect">Interesting in Contributing?</h3>
-            <a className="noselect">
-              All of the Polybrain source code is open source and available on
-              GitHub
-            </a>
-            <img
-              alt=""
-              className="art"
-              src="https://polybrain.b-cdn.net/carbon-landing-art-new.png"
-            />
-          </div>
-          <div className="card right cursor-glow">
-            <h3 className="noselect">Sponsor the Project</h3>
-            <a className="noselect">
-              Polybrain is an independent, self funded project. Leave a tip to
-              the creator if you feel so kind. Anything is greatly appreciated!
-            </a>
+        <div className="center-contents-horiz">
 
-            <div className="flex-center-vert">
-              <IconButton
-                icon={kofiLogo}
-                text="Support me on KoFi"
-                background_color="#FFB3B31A"
-                text_color="white"
-                width="270px"
-                onClick={() => {
-                  window
-                    .open("https://ko-fi.com/kyletennison", "_blank")
-                    ?.focus();
-                }}
+          <div className="card-container">
+            <div
+              className="card left cursor-glow"
+              onClick={() => {
+                window.open("https://github.com/PolybrainAI", "_blank")?.focus();
+              }}
+            >
+              <h3 className="noselect">Interesting in Contributing?</h3>
+              <a className="noselect">
+                All of the Polybrain source code is open source and available on
+                GitHub
+              </a>
+              <img
+                alt=""
+                className="art"
+                src="https://polybrain.b-cdn.net/carbon-landing-art-new.png"
               />
-              <IconButton
-                icon={paypalLogo}
-                text="Donate through PayPal"
-                background_color="#B3D6FF1A"
-                text_color="white"
-                width="270px"
-                onClick={() => {
-                  window
-                    .open("http://donate.kyletennison.com", "_blank")
-                    ?.focus();
-                }}
-              />
+            </div>
+            <div className="card right cursor-glow">
+              <h3 className="noselect">Sponsor the Project</h3>
+              <a className="noselect">
+                Polybrain is an independent, self funded project. Leave a tip to
+                the creator if you feel so kind. Anything is greatly appreciated!
+              </a>
+
+              <div className="flex-center-vert">
+                <IconButton
+                  icon={kofiLogo}
+                  text="Support me on KoFi"
+                  background_color="#FFB3B31A"
+                  text_color="white"
+                  width="270px"
+                  onClick={() => {
+                    window
+                      .open("https://ko-fi.com/kyletennison", "_blank")
+                      ?.focus();
+                  }}
+                />
+                <IconButton
+                  icon={paypalLogo}
+                  text="Donate through PayPal"
+                  background_color="#B3D6FF1A"
+                  text_color="white"
+                  width="270px"
+                  onClick={() => {
+                    window
+                      .open("http://donate.kyletennison.com", "_blank")
+                      ?.focus();
+                  }}
+                />
+              </div>
             </div>
           </div>
         </div>
