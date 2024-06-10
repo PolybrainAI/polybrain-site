@@ -14,7 +14,7 @@ export const stage = process.env.REACT_APP_STAGE;
 
 export const get_api_base = () => {
   if (stage==="PROD"){
-    return "http://polybrain.xyz/";
+    return "https://polybrain.xyz/";
   }
   else {
     console.warn("Running DEV")
