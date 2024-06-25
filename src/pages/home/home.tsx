@@ -8,7 +8,7 @@ import React, { useState, useEffect, useRef } from "react";
 import "./home.css";
 
 import Header from "../../components/header/header";
-import IconButton from "../../components/icon-btn/icon-btn";
+import IconButton from "../../components/icon-button/icon-button";
 
 import kofiLogo from "../../assets/kofi-logo.svg";
 import paypalLogo from "../../assets/paypal-logo.svg";
