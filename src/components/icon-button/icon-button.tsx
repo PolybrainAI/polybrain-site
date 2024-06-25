@@ -4,7 +4,7 @@ Utility component to add an icon to a button
 
 */
 import React from "react";
-import "./icon-btn.css";
+import "./icon-button.css";
 
 type CallbackFunctionVariadic = (...args: any[]) => void;
 
