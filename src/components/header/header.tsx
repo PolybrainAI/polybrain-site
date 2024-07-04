@@ -37,7 +37,7 @@ export default function Header() {
 
         <a
           className="header-link exclude-mobile"
-          href="https://polybrain.xyz/contributing"
+          href="https://polybrain.xyz/contribute"
         >
           Contribute
         </a>
