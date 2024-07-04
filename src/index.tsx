@@ -12,7 +12,7 @@ import Portal from "./pages/portal/portal";
 import "font-awesome/css/font-awesome.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Contribute from "./pages/contribute/contribute";
+import Contribute from "./pages/blogs/contribute";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement,
