@@ -13,6 +13,7 @@ import "font-awesome/css/font-awesome.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Contribute from "./pages/blogs/contribute";
+import Pricing from "./pages/blogs/pricing";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement,
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
   {
     path: "/contribute",
     element: <Contribute />,
+  },
+  {
+    path: "/pricing",
+    element: <Pricing />,
   },
 ]);
 
