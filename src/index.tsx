@@ -15,6 +15,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Contribute from "./pages/blogs/contribute";
 import Pricing from "./pages/blogs/pricing";
 import Faq from "./pages/blogs/faq";
+import Terms from "./pages/blogs/terms";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement,
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
   {
     path: "/faq",
     element: <Faq />,
+  },
+  {
+    path: "/terms",
+    element: <Terms />,
   },
 ]);
 
