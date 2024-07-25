@@ -38,7 +38,7 @@ Contributions to this project are welcome. Feel free to submit pull requests and
 
 ## Documentation
 
-For developers interested in integrating or extending Polybrain beyond the website, you can refer to the [contributing section](https://polybrain.xyz/contribute) on the Polybrain website. Please note that this documentation is more tailored towards the core Polybrain product, not the React site.
+For developers interested in integrating or extending Polybrain beyond the website, you can refer to the [contributing section](https://polybrain.xyz/contributing) on the Polybrain website. Please note that this documentation is more tailored towards the core Polybrain product, not the React site.
 
 ## License
 

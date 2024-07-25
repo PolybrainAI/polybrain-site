@@ -11,8 +11,8 @@ const Footer = () => {
           <img src={logo} alt="Company Logo" />
         </div>
         <div className="footer-links">
-          <a href="/contact">Contact</a>
-          <a href="/terms">Terms & Conditions</a>
+          <a href="/blog/contact">Contact</a>
+          <a href="/blog/terms">Terms & Conditions</a>
           <a
             href="https://github.com/PolybrainAI/"
             target="_blank"
@@ -20,8 +20,8 @@ const Footer = () => {
           >
             <i className="bi bi-github"></i>
           </a>
-          <a href="/pricing">Pricing</a>
-          <a href="/faq">FAQ</a>
+          <a href="/blog/pricing">Pricing</a>
+          <a href="/blog/faq">FAQ</a>
         </div>
       </div>
     </footer>

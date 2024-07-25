@@ -12,11 +12,6 @@ import Portal from "./pages/portal/portal";
 import "font-awesome/css/font-awesome.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Contribute from "./pages/blogs/contribute";
-import Pricing from "./pages/blogs/pricing";
-import Faq from "./pages/blogs/faq";
-import Terms from "./pages/blogs/terms";
-import Technical from "./pages/blogs/technical";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement,
@@ -34,26 +29,6 @@ const router = createBrowserRouter([
   {
     path: "/portal",
     element: <Portal />,
-  },
-  {
-    path: "/contribute",
-    element: <Contribute />,
-  },
-  {
-    path: "/pricing",
-    element: <Pricing />,
-  },
-  {
-    path: "/faq",
-    element: <Faq />,
-  },
-  {
-    path: "/terms",
-    element: <Terms />,
-  },
-  {
-    path: "/technical",
-    element: <Technical />,
   },
 ]);
 
