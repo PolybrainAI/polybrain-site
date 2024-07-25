@@ -37,19 +37,19 @@ export default function Header() {
 
         <a
           className="header-link exclude-mobile"
-          href="https://polybrain.xyz/contributing"
+          href="/contribute"
         >
           Contribute
         </a>
         <a
           className="header-link exclude-mobile"
-          href="https://polybrain.xyz/pricing"
+          href="/pricing"
         >
           Pricing
         </a>
         <a
           className="header-link exclude-mobile"
-          href="https://polybrain.xyz/faq"
+          href="/faq"
         >
           FAQ
         </a>
