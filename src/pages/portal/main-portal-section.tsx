@@ -71,8 +71,7 @@ export default function MainPortalSection(props: {
         you can update it here at any time. <br />
         <br />
         By continuing to set up your account, you agree to have read and agree
-        to all of the{" "}
-        <a href="/blog/terms-and-conditions">Terms and Conditions.</a>
+        to all of the <a href="/terms">Terms and Conditions.</a>
       </p>
 
       <Accordion defaultActiveKey="0">
