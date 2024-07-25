@@ -10,7 +10,13 @@ import "./home.css";
 import Header from "../../components/header/header";
 import IconButton from "../../components/icon-button/icon-button";
 
-import { kofiLogo, landingArt, landingCarbonArt, landingNumbersArt, landingStepsArt } from "../../api/cdn";
+import {
+  kofiLogo,
+  landingArt,
+  landingCarbonArt,
+  landingNumbersArt,
+  landingStepsArt,
+} from "../../api/cdn";
 import { paypalLogo } from "../../api/cdn";
 import { get_api_base, isLoggedIn } from "../../api/api";
 
@@ -138,11 +144,7 @@ export default function Home() {
       </div>
 
       <div id="setup-steps">
-        <img
-          src={landingNumbersArt}
-          id="enumeration"
-          alt=""
-        />
+        <img src={landingNumbersArt} id="enumeration" alt="" />
         <img
           src={landingStepsArt}
           className="art fade-with-vis"
@@ -195,11 +197,7 @@ export default function Home() {
                 All of the Polybrain source code is open source and available on
                 GitHub
               </a>
-              <img
-                alt=""
-                className="art"
-                src={landingCarbonArt}
-              />
+              <img alt="" className="art" src={landingCarbonArt} />
             </div>
             <div className="card right cursor-glow">
               <h3 className="noselect">Sponsor the Project</h3>

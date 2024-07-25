@@ -35,22 +35,13 @@ export default function Header() {
           Polybrain
         </a>
 
-        <a
-          className="header-link exclude-mobile"
-          href="/contribute"
-        >
+        <a className="header-link exclude-mobile" href="/contribute">
           Contribute
         </a>
-        <a
-          className="header-link exclude-mobile"
-          href="/pricing"
-        >
+        <a className="header-link exclude-mobile" href="/pricing">
           Pricing
         </a>
-        <a
-          className="header-link exclude-mobile"
-          href="/faq"
-        >
+        <a className="header-link exclude-mobile" href="/faq">
           FAQ
         </a>
 
