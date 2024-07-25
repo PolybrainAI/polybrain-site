@@ -11,6 +11,7 @@ const Footer = () => {
           <img src={logo} alt="Company Logo" />
         </div>
         <div className="footer-links">
+          <a href="/technical">Technical</a>
           <a href="/contact">Contact</a>
           <a href="/terms">Terms & Conditions</a>
           <a
