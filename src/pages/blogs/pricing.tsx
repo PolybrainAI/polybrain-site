@@ -1,6 +1,5 @@
 import { Blog } from "../../components/blog/blog";
-
-import pricingArt from "../../assets/pricing-art.jpg"
+import { pricingArt } from "../../api/cdn";
 
 export default function Pricing(){
     return <Blog

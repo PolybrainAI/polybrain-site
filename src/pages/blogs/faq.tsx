@@ -1,6 +1,6 @@
 import { Blog } from "../../components/blog/blog";
 
-import faqArt from "../../assets/faq-art.png"
+import { faqArt } from "../../api/cdn";
 
 export default function Faq(){
     return <Blog

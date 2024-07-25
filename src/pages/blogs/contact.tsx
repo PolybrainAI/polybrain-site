@@ -1,6 +1,5 @@
 import { Blog } from "../../components/blog/blog";
-
-import contactArt from "../../assets/contact-art.png"
+import { contactArt } from "../../api/cdn";
 
 export default function Faq(){
     return <Blog

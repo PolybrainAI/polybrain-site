@@ -1,6 +1,6 @@
 import { Blog } from "../../components/blog/blog";
 
-import technicalArt from "../../assets/technical-art.png"
+import { technicalArt } from "../../api/cdn";
 
 
 export default function Technical() {

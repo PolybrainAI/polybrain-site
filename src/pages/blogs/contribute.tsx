@@ -1,7 +1,6 @@
 
 import { Blog } from "../../components/blog/blog"
-
-import contributeArt from "../../assets/contribute-art.png"
+import { contributeArt } from "../../api/cdn"
 
 export default function Contribute() {
 

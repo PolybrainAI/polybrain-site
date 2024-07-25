@@ -10,8 +10,8 @@ import "./home.css";
 import Header from "../../components/header/header";
 import IconButton from "../../components/icon-button/icon-button";
 
-import kofiLogo from "../../assets/kofi-logo.svg";
-import paypalLogo from "../../assets/paypal-logo.svg";
+import { kofiLogo, landingArt, landingCarbonArt, landingNumbersArt, landingStepsArt } from "../../api/cdn";
+import { paypalLogo } from "../../api/cdn";
 import { get_api_base, isLoggedIn } from "../../api/api";
 
 export default function Home() {
@@ -109,7 +109,7 @@ export default function Home() {
         <img
           id="landing-art"
           alt="landing art"
-          src="https://polybrain.b-cdn.net/landing-art.png"
+          src={landingArt}
           style={{ top: offset < window.innerHeight ? -offset / 4 : -1e4 }}
         />
         <div className="align-center-vert">
@@ -139,12 +139,12 @@ export default function Home() {
 
       <div id="setup-steps">
         <img
-          src="https://polybrain.b-cdn.net/landing-numbers-art.svg"
+          src={landingNumbersArt}
           id="enumeration"
           alt=""
         />
         <img
-          src="https://polybrain.b-cdn.net/landing-steps-art.png"
+          src={landingStepsArt}
           className="art fade-with-vis"
           id="landing-steps-art"
           alt=""
@@ -198,7 +198,7 @@ export default function Home() {
               <img
                 alt=""
                 className="art"
-                src="https://polybrain.b-cdn.net/carbon-landing-art-new.png"
+                src={landingCarbonArt}
               />
             </div>
             <div className="card right cursor-glow">

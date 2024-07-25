@@ -1,7 +1,6 @@
 import { Blog } from "../../components/blog/blog";
 
-import termsArt from "../../assets/terms-art.png";
-
+import { termsArt } from "../../api/cdn";
 
 export default function Terms(){
     return <Blog
