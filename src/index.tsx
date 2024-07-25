@@ -17,6 +17,7 @@ import Pricing from "./pages/blogs/pricing";
 import Faq from "./pages/blogs/faq";
 import Terms from "./pages/blogs/terms";
 import Technical from "./pages/blogs/technical";
+import Contact from "./pages/blogs/contact";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement,
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
   {
     path: "/technical",
     element: <Technical />,
+  },
+  {
+    path: "/contact",
+    element: <Contact />,
   },
 ]);
 
