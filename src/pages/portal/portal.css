@@ -1,7 +1,8 @@
 #portal-page {
   position: relative;
   margin-top: 78px;
-  font-family: "Roboto Flex";
+  font-family: "Roboto Flex", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-weight: 400;
   padding-bottom: 700px;
 }
