@@ -34,7 +34,8 @@ button {
 
 #landing h1 {
   position: relative;
-  font-family: "Roboto Flex";
+  font-family: "Roboto Flex", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   color: white;
   font-weight: 500;
   font-size: 6vw;

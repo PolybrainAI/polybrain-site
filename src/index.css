@@ -25,12 +25,14 @@ code {
 }
 
 .logo-font {
-  font-family: "Roboto Flex";
+  font-family: "Roboto Flex", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-weight: 100;
 }
 
 .btn-fill {
-  font-family: "Roboto Flex";
+  font-family: "Roboto Flex", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-size: 20px;
   padding: 10px 30px 10px 30px;
   border-radius: 7px;
@@ -50,7 +52,8 @@ code {
 }
 
 .btn-trace {
-  font-family: "Roboto Flex";
+  font-family: "Roboto Flex", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-size: 20px;
   padding: 10px 30px 10px 30px;
   border-radius: 7px;
