@@ -4,7 +4,7 @@ Header for all Polybrain pages
 
 */
 import React, { useEffect, useState } from "react";
-import logo from "./../../assets/logo-no-background.svg";
+import logo from "../../assets/logo-circle-beta-1024.png";
 import "./header.css";
 import { getUserInfo, get_api_base } from "../../api/api";
 import { useNavigate } from "react-router-dom";
