@@ -104,7 +104,7 @@ export default function Home() {
   });
 
   function redirectToLogin() {
-    window.location.href = `${get_api_base()}auth0/login`;
+    window.location.replace(`${get_api_base()}auth0/login`);
   }
 
   return (
