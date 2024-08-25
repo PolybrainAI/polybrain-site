@@ -39,7 +39,7 @@ export default function Portal() {
       const user_info = await getUserInfo();
 
       if (user_info === null) {
-        window.location.href = "http://localhost:3000/";
+        window.location.replace("https://polybrain.xyz")
       } else {
         setUsername(user_info.username);
         setUserEmail(user_info.email);
@@ -162,7 +162,7 @@ export default function Portal() {
               disabled={userEmail !== deleteCheckText}
               onClick={() => {
                 if (userEmail === deleteCheckText) {
-                  window.location.href = `${get_api_base()}user/delete-self`;
+                  window.location.replace(`${get_api_base()}user/delete-self`);
                 }
               }}
             >
