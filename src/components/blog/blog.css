@@ -39,6 +39,8 @@
   margin-right: auto;
   padding-bottom: 200px;
   color: #363d43;
+  display: flex;
+  flex-direction: column;
 }
 
 .blog .blog-content p {
@@ -50,6 +52,14 @@
   background-color: #95d3740f;
   text-decoration: none;
   font-weight: bold;
+}
+
+.blog .blog-content img {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  justify-self: center;
+  display: block;
 }
 
 .blog .blog-content code {
