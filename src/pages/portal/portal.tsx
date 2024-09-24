@@ -39,7 +39,7 @@ export default function Portal() {
       const user_info = await getUserInfo();
 
       if (user_info === null) {
-        window.location.replace("https://polybrain.xyz")
+        window.location.replace("https://polybrain.xyz");
       } else {
         setUsername(user_info.username);
         setUserEmail(user_info.email);

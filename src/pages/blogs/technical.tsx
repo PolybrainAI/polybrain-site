@@ -26,7 +26,10 @@ export default function Technical() {
         </a>{" "}
         library to speak to OnShape.
         <br />
-        <img src="https://polybrain.b-cdn.net/polybrain-chain.png" alt="flowchart showing the relationship between Polybrain agents" />
+        <img
+          src="https://polybrain.b-cdn.net/polybrain-chain.png"
+          alt="flowchart showing the relationship between Polybrain agents"
+        />
         <br />
         <h2>LLM Chains</h2>
         <p>

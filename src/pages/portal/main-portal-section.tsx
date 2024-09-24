@@ -170,7 +170,7 @@ export default function MainPortalSection(props: {
                 <div className="accordion-section-right ">
                   <div>
                     <iframe
-                      src="https://www.youtube.com/watch?v=atGUKddlyhI"
+                      src="https://www.youtube.com/embed/atGUKddlyhI?si=1IhpyoQdZ6txcYbR"
                       title="YouTube video player"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                       referrerPolicy="strict-origin-when-cross-origin"
@@ -247,7 +247,7 @@ export default function MainPortalSection(props: {
                 <div className="accordion-section-right ">
                   <div>
                     <iframe
-                      src="https://www.youtube.com/watch?v=KgLIgDW9v5A"
+                      src="https://www.youtube.com/embed/KgLIgDW9v5A?si=ing-428UOtn9T_jR"
                       title="YouTube video player"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                       referrerPolicy="strict-origin-when-cross-origin"
