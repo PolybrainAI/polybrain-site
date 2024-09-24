@@ -138,6 +138,7 @@
 
 #portal-page .input-video-container {
   gap: 50px;
+  width: 100%;
 }
 
 @media (max-width: 1230px) {
